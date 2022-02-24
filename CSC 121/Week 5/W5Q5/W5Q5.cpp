@@ -6,3 +6,7 @@
     CSC 121
 
 */
+
+#include <iostream>
+using namespace std;
+
