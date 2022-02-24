@@ -44,13 +44,13 @@ int main()
 
     cout << "Lets see your name in reverse.\n";
 
-    for(int i = 2; i >= 0; i--)
+    for(int i = 2; i >= 0; i--)                                                                                                                     // for loop for presentation
     {
-        usleep(5000000);
+        usleep(5000000);                                                                                                                            // wait for 5s
 
-        if(i == 2)
+        if(i == 2)                                                                                                                                  
         {
-            cout << "..." << " \n";
+            cout << "..." << " \n";                     
         }
         else if(i == 1)
         {
