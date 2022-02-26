@@ -1,0 +1,1 @@
+common[j + 1] = common[j];
