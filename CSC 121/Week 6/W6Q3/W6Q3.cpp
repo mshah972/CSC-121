@@ -26,37 +26,37 @@ int main()
         cout << endl;                                                                                                                       // new line
     }
 
-    int num = stoi(fullString);                                                                 
+    int sInt = stoi(fullString);                                                                                                            // convert string to int using stoi
 
-    temp = num;                                                                             
+    temp = sInt;                                                                                                                            // set the temp varaible to converted int
 
-    while (num > 0) 
+    while (sInt > 0)                                                                                                                        // while loop if the sInt is > 0
     {                                                                       
-        length = num % 10;                                                                     
-        sum = (sum * 10) + length;
-        num = num / 10;
+        length = sInt % 10;                                                                                                                 // finds out the % of (sInt % 10)                                                           
+        sum = (sum * 10) + length;                                                                                                          // finds sum
+        sInt = sInt / 10;                                                                                                                   // divide sInt by 10
     }
     
-    if (temp == sum) 
+    if (temp == sum)                                                                                                                        // if statement to checks if temp == sum
     {                                                                      
-        cout << "\nThe number is a Palindrome number.\n";
-        cout << endl;
+        cout << "\nThe number is a Palindrome number.\n";                                                                                   // cout for Palindrome number
+        cout << endl;                                                                                                                       // newline
 
-        int center = stoi(choice[2]);                                                             
+        int center = stoi(choice[2]);                                                                                                       // find the center of the array                                          
 
-        for (int i = 0; i < center; i++) 
+        for (int i = 0; i < center; i++)                                                                                                    // for loop to print out the rows of *
         {                                                   
-            for (int j = 0; j < center; j++) 
+            for (int j = 0; j < center; j++)                                                                                                // for loop to print out the column of *
             {
                 cout << "* ";
             }
-            cout << endl;
+            cout << endl;                                                                                                                   // newline
         }
-        cout << endl;
+        cout << endl;                                                                                                                       // newline
     }
-    else 
+    else                                                                                                                                    // if temp != sum
     {                                                                                 
-        cout << "\nThe number is not a Palindrome number.\n\n";
+        cout << "\nThe number is not a Palindrome number.\n\n";                                                                             // number is not Palindrome number
     }
 
     return 0;
