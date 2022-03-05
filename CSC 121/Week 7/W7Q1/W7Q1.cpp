@@ -12,11 +12,13 @@
 #include <ctime>
 using namespace std;
 
+int num1, num2, num3, num4;
+
 int main()
 {
    
-    int num1, num2, num3, num4;
-    default_random_engine engine{ static_cast<unsigned int>(time(0)) };
+    default_random_engine engine{ static_cast<unsigned int>(time(0)) }; 
 
+    uniform_int_distribution<unsigned int> randNum{ 1, 100 };
 
 }
