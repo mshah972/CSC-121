@@ -27,7 +27,7 @@ int main()
 
     cout << "\n\nNames in alphabetically order: \"";                                                                                
 
-    for(int i = 0; i < names.size(); i++)                                                                                           // for loop to print out names
+    for(string name : names)                                                                                                        // for loop to print out names
     {
         if(name != "exit")                                                                                                          // if statement to check for exit
         {
