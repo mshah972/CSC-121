@@ -16,6 +16,8 @@ int main()
     vector<string> names;                                                                                                           // vector string called names
     string name;                                                                                                                    // string variable for name
 
+    cout << endl;
+
     while(name != "exit")                                                                                                           // while loop until user enter "exit"
     {
         cout << "Enter a name (type \"exit\" to exit out the program): ";                                                           // prompt to enter name
@@ -27,11 +29,11 @@ int main()
 
     cout << "\n\nNames in alphabetically order: \"";                                                                                
 
-    for(string name : names)                                                                                                        // for loop to print out names
+    for(string name: names)                                                                                                        // for loop to print out names
     {
         if(name != "exit")                                                                                                          // if statement to check for exit
         {
-            cout << name << ", ";                                                                                                   // if not then print name
+            cout << name << ", ";                                                                                                  // if not then print name
         }
         else                                                                                                                        // else (if name is equal to "exit" then stop printing name and print the default)
         {
