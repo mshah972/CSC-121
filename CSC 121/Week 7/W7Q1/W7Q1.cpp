@@ -10,6 +10,7 @@
 #include <iostream>
 #include <random>
 #include <ctime>
+#include <string.h>
 using namespace std;
 
 int num1, num2, num3, num4;
