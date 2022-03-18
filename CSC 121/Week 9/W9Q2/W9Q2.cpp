@@ -32,7 +32,9 @@ int main()
     if(black == "y" || black == "Y")
     {
         cout << endl;
-        cout << "Your black color code is R:" << Red << " G:" << Green << " B:" << Blue << endl;
+        cout << "\nYour black color code is R:" << Red << " G:" << Green << " B:" << Blue << endl;
+        cout << "\n\nDo you want to generate another color code? (y/n): ";
+        cin >> input;
         cout << endl; 
     }
         
@@ -42,7 +44,7 @@ int main()
 
         for (int i = 0; i < 1; i++)
         {
-            printf("Your random generated color code is R:");
+            printf("\nYour random generated color code is R:");
 
             for (int j = 0; j < 1; j++)
             {
@@ -75,14 +77,17 @@ int main()
         cin >> input;
     }
     
-    cout << "No worries, you can use our program any time you need to get a random rgb code." << endl;
+    if(input == "n")
+    {
+        cout << "No worries, you can use our program any time you need to get a random rgb code." << endl;
+    }
+   
     cout << "\nThanks and have great day!!\n" << endl;
     exit;
 
     Red = r;
     Green = g;
     Blue = b;
-    cout << "\n" << endl;
 
     return 0;
 }
