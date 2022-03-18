@@ -1,45 +1,35 @@
 
 
 #include <iostream>
+#include <string>
 using namespace std;
 
-int ax(std::string);
-
-std::string by(int);
-
-int x{4};
 
 int main()
 {
-    int x = 1;
+    string fName, sName;                                                                                    // string variables
 
-    cout << "x = " << ::x;
 
-    x = ax("\n\tthe x vaule ");
-    cout << "\n\treturn x = " << x;
+    cout << endl;
+    cout << "Please enter your 1 name: ";                                                                   // prompt for first name 
+    cin >> fName;
 
-    cout << by(x) << ::x;
+    cout << endl;
+    cout << "Please enter your 2 name: ";                                                                   // prompt for last name        
+    cin >> sName;
+
+    int fLetter[26] = {0};
+    int sLetter[26] = {0};
+
+    char common, ch = 'a';
+
+    int q = (int)ch, w;
+
+    for(int i = 0; i < fName.length(); i++)
+    {
+        fLetter[(int)fName[i] - q]++;
+    }
+
 
     return 0;
-}
-
-int ax(std::string p)
-{
-    x *= 3;
-    cout << p;
-    return x;
-}
-
-std::string by(int a)
-{
-    x *= 5;
-
-    if(a < 5)
-    {
-        return "\n\t\tLx = ";
-    }
-    else 
-    {
-        return "\n\t\tGy = ";
-    }
 }
