@@ -15,9 +15,9 @@ using namespace std;
 
 enum rgb                                                                                                        // enumeration for rgb preset to black
 {
-    r = 255,
-    g = 255,
-    b = 255
+    r = 0,
+    g = 0,
+    b = 0
 }; 
 
 int main()                                                                                                      // main function
