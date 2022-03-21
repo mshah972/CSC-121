@@ -10,7 +10,7 @@
 #include <iostream>
 #include <random>
 #include <ctime>
-#include <windows.h>
+#include <unistd.h>
 using namespace std;
 
 enum rps                                                                                                        // enum for rock, paper, scissor
@@ -67,7 +67,7 @@ int main()                                                                      
         for(int i = 0; i < 3; i++)                                          
         {
             cout << ".";
-            Sleep(1000);
+            sleep(100000);
         }
 
         cout << "\n" << endl;
@@ -79,7 +79,7 @@ int main()                                                                      
         for(int i = 0; i < 3; i++)
         {
             cout << ".";
-            Sleep(1000);
+            sleep(100000);
         }
 
         cout << "\n" << endl;
