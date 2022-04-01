@@ -1,0 +1,18 @@
+
+Book Title : 
+Book Author : Paul Deite
+Book Publisher : Pearson
+Book In Stock : 10
+Book Sales : 0
+
+Book Title : 
+Book Author : Moksh
+Book Publisher : Pearson
+Book In Stock : 5
+Book Sales : 0
+
+Book Title : 
+Book Author : 
+Book Publisher : ¼ý{
+Book In Stock : 4
+Book Sales : 1
