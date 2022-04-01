@@ -45,15 +45,15 @@ void stocking()
     cout << endl;
 
     cout << setw(38) << "Please Enter The Title of The Book: ";
-    cin >> bTitle;
+    cin.getline(bTitle, 50);
     cout << endl;
 
     cout << setw(39) << "Please Enter The Author of The Book: ";
-    cin >> bAuthor;
+    cin.getline(bAuthor, 50);
     cout << endl;
 
     cout << setw(42) << "Please Enter The Publisher of The Book: ";
-    cin >> bPublisher;
+    cin.getline(bPublisher, 50);
     cout << endl;
 
     cout << setw(53) << "Please Enter The How Many Books You Have In Stock: ";
@@ -103,10 +103,6 @@ void stocking()
 
     cout << endl;
 
-    cout << setw(60) << "PRESS ENTER TO CONTINUE" << endl;
-    cin.ignore();
-    cin.get();
-
     system("cls");
 
     return;
@@ -130,7 +126,7 @@ void edit()
     cout << setw(18) << "4. Book In Stock\n";
     cout << setw(18) << "5. Exit\n";
 
-    cout << setw(39) << "Enter Your Choice: ";
+    cout << setw(15) << "Enter Your Choice: ";
     cin >> edit;
 
     cout << endl;
@@ -214,9 +210,9 @@ void edit()
 
 void buy()
 {
-    char bTitle[50];
-    char bAuthor[50];
-    char bPublisher[50];
+    string title;
+    string author;
+    string publisher;
     int choice = 0;
     char confirmation;
 
@@ -229,79 +225,92 @@ void buy()
     cout << setw(18) << "3. Book Publisher\n";
     cout << setw(18) << "4. Exit\n";
 
-    cout << setw(39) << "Enter Your Choice: ";
+    cout << setw(15) << "Enter Your Choice: ";
     cin >> choice;
-
-    cout << "\nYour choice is " << choice << endl;
-
 
     if(choice == 1)
     {
-        cout << "\nEnter The Book Title You Want To Buy: ";
-        cin >> bTitle;
+        cout << "\nEnter The Title Of The Book You Want To Buy: ";
+        cin >> title;
         cout << endl;
 
         ifstream infile;
         infile.open("Bookstore.txt");
-        while(!infile.eof())
+        while(infile.eof())
         {
-            infile.getline(bTitle, 50);
-            infile.getline(bAuthor, 50);
-            infile.getline(bPublisher, 50);
+            infile >> title;
+            infile >> author;
+            infile >> publisher;
             infile >> inventory;
             infile >> sales;
-            infile.ignore();
-            if(strcmp(bTitle, bTitle) == 0)
+            if(title == title)
             {
-                cout << setw(60) << "BOOK FOUND" << endl;
-                cout << setw(18) << "Book Title: " << bTitle << endl;
-                cout << setw(19) << "Book Author: " << bAuthor << endl;
-                cout << setw(22) << "Book Publisher: " << bPublisher << endl;
-                cout << setw(21) << "Book In Stock: " << inventory << endl;
-                cout << setw(21) << "Book Sales: " << sales << endl;
+                cout << setw(18) << "Book Title: " << title << endl;
+                cout << setw(18) << "Book Author: " << author << endl;
+                cout << setw(18) << "Book Publisher: " << publisher << endl;
+                cout << setw(18) << "Book In Stock: " << inventory << endl;
+                cout << setw(18) << "Book Sales: " << sales << endl;
                 cout << endl;
-                cout << setw(39) << "ENTER (y) TO CONFIRM OR (n) TO EDIT: ";
-                cin >> confirmation;
-                cout << endl;
-                if(confirmation == 'n')
-                {
-                    buy();
-                }
-                else
-                {
-                    system("cls");
-                    cout << setw(62) << "CONFIRMED, BOOK WAS BOUGHT !!" << endl;
-                    cout << endl;
-                    title = bTitle;
-                    author = bAuthor;
-                    publisher = bPublisher;
-                    inventory = inventory - 1;
-                    sales = sales + 1;
-                    ofstream outfile;
-                    outfile.open("Sales.txt", ios::app);
-                    outfile << "\nBook Title : " << title << endl;
-                    outfile << "Book Author : " << author << endl;
-                    outfile << "Book Publisher : " << publisher << endl;
-                    outfile << "Book In Stock : " << inventory << endl;
-                    outfile << "Book Sales : " << sales << endl;
-                    outfile.close();
-                }
             }
-            infile.close();
         }
-        
+        infile.close();
+
     }
     else if(choice == 2)
     {
         cout << "\nEnter The Book Author You Want To Buy: ";
-        cin >> bAuthor;
+        cin >> author;
         cout << endl;
+
+        ifstream infile;
+        infile.open("Bookstore.txt");
+        while(infile.eof())
+        {
+            infile >> title;
+            infile >> author;
+            infile >> publisher;
+            infile >> inventory;
+            infile >> sales;
+            if(author == author)
+            {
+                cout << setw(18) << "Book Title: " << title << endl;
+                cout << setw(18) << "Book Author: " << author << endl;
+                cout << setw(18) << "Book Publisher: " << publisher << endl;
+                cout << setw(18) << "Book In Stock: " << inventory << endl;
+                cout << setw(18) << "Book Sales: " << sales << endl;
+                cout << endl;
+            }
+        }
+        infile.close();
+  
     }
     else if(choice == 3)
     {
         cout << "\nEnter The Book Publisher You Want To Buy: ";
-        cin >> bPublisher;
+        cin >> publisher;
         cout << endl;
+
+        // ifstream infile;
+        // infile.open("Bookstore.txt");
+        // while(infile.eof())
+        // {
+        //     infile >> title;
+        //     infile >> author;
+        //     infile >> publisher;
+        //     infile >> inventory;
+        //     infile >> sales;
+        //     if(publisher == publisher)
+        //     {
+        //         cout << setw(18) << "Book Title: " << title << endl;
+        //         cout << setw(18) << "Book Author: " << author << endl;
+        //         cout << setw(18) << "Book Publisher: " << publisher << endl;
+        //         cout << setw(18) << "Book In Stock: " << inventory << endl;
+        //         cout << setw(18) << "Book Sales: " << sales << endl;
+        //         cout << endl;
+        //     }
+        // }
+        // infile.close();
+
     }
     else if(choice == 4)
     {
@@ -313,14 +322,11 @@ void buy()
         cout << setw(62) << "INVALID INPUT, INVENTORY NOT SAVED !!" << endl;
         cout << endl;
     }
-    
-
-    cout << endl;
 
     cout << "\nYou Want To Buy The Book With The Following Details\n";
-    cout << setw(18) << "Book Title: " << bTitle << endl;
-    cout << setw(19) << "Book Author: " << bAuthor << endl;
-    cout << setw(22) << "Book Publisher: " << bPublisher << endl;
+    cout << setw(18) << "Book Title: " << title << endl;
+    cout << setw(18) << "Book Author: " << author << endl;
+    cout << setw(18) << "Book Publisher: " << publisher << endl;    
 
     cout << endl;
 
@@ -338,19 +344,31 @@ void buy()
         system("cls");
         cout << setw(62) << "CONFIRMED, BOOK WAS BOUGHT !!" << endl;
         cout << endl;
-        title = bTitle;
-        author = bAuthor;
-        publisher = bPublisher;
         inventory = inventory - 1;
         sales = sales + 1;
+        ifstream infile;
+        infile.open("Bookstore.txt");
         ofstream outfile;
         outfile.open("Bookstore.txt", ios::app);
-        outfile << "\nBook Title : " << title << endl;
-        outfile << "Book Author : " << author << endl;
-        outfile << "Book Publisher : " << publisher << endl;
-        outfile << "Book In Stock : " << inventory << endl;
-        outfile << "Book Sales : " << sales << endl;
+        while(infile.eof())
+        {
+            infile >> title;
+            infile >> author;
+            infile >> publisher;
+            infile >> inventory;
+            infile >> sales;
+            if(title == title)
+            {
+                outfile << "\nBook Title : " << title << endl;
+                outfile << "Book Author : " << author << endl;
+                outfile << "Book Publisher : " << publisher << endl;
+                outfile << "Book In Stock : " << inventory << endl;
+                outfile << "Book Sales : " << sales << endl;
+            }
+        }
+        infile.close();
         outfile.close();
+
     }
 
 
@@ -358,7 +376,14 @@ void buy()
 
 void sell()
 {
+    
+    int temp = 0;
+    
+    ifstream infile;
+    infile.open("Bookstore.txt");
+    
 
+    cout << "\nTotal Books In Stock: " << inventory << endl;
 }
 
 void display()
@@ -385,12 +410,12 @@ int main()
     cout << endl;
 
     cout << setw(39) << "1. Add New Book\n";
-    cout << setw(39) << "2. Buy Book\n";
-    cout << setw(39) << "3. Sell Book\n";
-    cout << setw(39) << "4. Display Inventory\n";
-    cout << setw(39) << "5. Exit\n";
-
-    cout << setw(39) << "Enter Your Choice: ";
+    cout << setw(35) << "2. Buy Book\n";
+    cout << setw(36) << "3. Sell Book\n";
+    cout << setw(44) << "4. Display Inventory\n";
+    cout << setw(31) << "5. Exit\n";
+    cout << endl;
+    cout << setw(33) << "Enter Your Choice: ";
     cin >> choice;
 
     cout << endl;
@@ -414,6 +439,7 @@ int main()
     else if(choice == 5)
     {
         cout << setw(62) << "EXITING, GOODBYE !!" << endl;
+        exit(0);
     }
     else
     {
