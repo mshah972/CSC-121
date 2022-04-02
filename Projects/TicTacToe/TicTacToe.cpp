@@ -7,6 +7,7 @@
 #include <iostream>
 #include <string>
 #include <iomanip>
+#include <windows.h>
 using namespace std;
 
 //string array for the board to be used in the game and the board to be used in the display function
@@ -17,13 +18,16 @@ string board2[3][3] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 string playerMoves[9] = { "", "", "", "", "", "", "", "", "" };
 string computerMoves[9] = { "", "", "", "", "", "", "", "", "" };
 
+//string varible for play again
+string playAgain;
+
 //function prototypes for the game functions
 void displayBoard();
 void player();
 void computer();
 void checkWin();
 void checkTie();
-
+void anotherTurn();
 
 //string choice for o or x
 string choice;
@@ -34,7 +38,7 @@ int gamesPlayed = 0;
 int gamesWon = 0;
 
 
-int protectDate(string prompt)
+int protectData(string prompt)
 {
     int temp;
     cout << prompt;
@@ -44,7 +48,7 @@ int protectDate(string prompt)
         while(cin.fail())
         {
             cin.clear();
-            cin.ignore(256, '\n');
+            cin.ignore();
             cout << prompt;
             cin >> temp;
         }
@@ -58,10 +62,11 @@ int protectDate(string prompt)
 
 void displayBoard()
 {
+    
     cout << "  " << board[0][0] << " | " << board[0][1] << " | " << board[0][2] << endl;
-    cout << "  " << "---|---|---" << endl;
+    cout << "  " << "-----------" << endl;
     cout << "  " << board[1][0] << " | " << board[1][1] << " | " << board[1][2] << endl;
-    cout << "  " << "---|---|---" << endl;
+    cout << "  " << "-----------" << endl;
     cout << "  " << board[2][0] << " | " << board[2][1] << " | " << board[2][2] << endl;
 
     cout << endl;
@@ -75,9 +80,10 @@ void player()
     while (!valid)
     {
         cout << "Enter the row number: ";
-        row = protectDate("");
+        row = protectData("");
         cout << "Enter the column number: ";
-        column = protectDate("");
+        column = protectData("");
+
         if (board[row - 1][column - 1] != "X" && board[row - 1][column - 1] != "O")
         {
             board[row - 1][column - 1] = "X";
@@ -100,6 +106,7 @@ void computer()
     {
         row = rand() % 3 + 1;
         column = rand() % 3 + 1;
+
         if (board[row - 1][column - 1] != "X" && board[row - 1][column - 1] != "O")
         {
             board[row - 1][column - 1] = "O";
@@ -111,147 +118,149 @@ void computer()
 
 void checkWin()
 {
-    //check for horizontal wins
+
+    cout << endl;
+
     if (board[0][0] == "X" && board[0][1] == "X" && board[0][2] == "X")
     {
-        cout << "Player wins!" << endl;
+        cout << "\n\t\tPLAYER WINS!" << endl;
         score++;
         gamesWon++;
         gamesPlayed++;
         displayBoard();
-        exit(0);
+        anotherTurn();
     }
     else if (board[1][0] == "X" && board[1][1] == "X" && board[1][2] == "X")
     {
-        cout << "Player wins!" << endl;
+        cout << "\n\t\tPLAYER WINS!" << endl;
         score++;
         gamesWon++;
         gamesPlayed++;
         displayBoard();
-        exit(0);
+        anotherTurn();
     }
     else if (board[2][0] == "X" && board[2][1] == "X" && board[2][2] == "X")
     {
-        cout << "Player wins!" << endl;
+        cout << "\n\t\tPLAYER WINS!" << endl;
         score++;
         gamesWon++;
         gamesPlayed++;
         displayBoard();
-        exit(0);
+        anotherTurn();
     }
     //check for vertical wins
     else if (board[0][0] == "X" && board[1][0] == "X" && board[2][0] == "X")
     {
-        cout << "Player wins!" << endl;
+        cout << "\n\t\tPLAYER WINS!" << endl;
         score++;
         gamesWon++;
         gamesPlayed++;
         displayBoard();
-        exit(0);
+        anotherTurn();
     }
     else if (board[0][1] == "X" && board[1][1] == "X" && board[2][1] == "X")
     {
-        cout << "Player wins!" << endl;
+        cout << "\n\t\tPLAYER WINS!" << endl;
         score++;
         gamesWon++;
         gamesPlayed++;
         displayBoard();
-        exit(0);
+        anotherTurn();
     }
     else if (board[0][2] == "X" && board[1][2] == "X" && board[2][2] == "X")
     {
-        cout << "Player wins!" << endl;
+        cout << "\n\t\tPLAYER WINS!" << endl;
         score++;
         gamesWon++;
         gamesPlayed++;
         displayBoard();
-        exit(0);
+        anotherTurn();
     }
     //check for diagonal wins
     else if (board[0][0] == "X" && board[1][1] == "X" && board[2][2] == "X")
     {
-        cout << "Player wins!" << endl;
+        cout << "\n\t\tPLAYER WINS!" << endl;
         score++;
         gamesWon++;
         gamesPlayed++;
         displayBoard();
-        exit(0);
+        anotherTurn();
     }
     else if (board[0][2] == "X" && board[1][1] == "X" && board[2][0] == "X")
     {
-        cout << "Player wins!" << endl;
+        cout << "\n\t\tPLAYER WINS!" << endl;
         score++;
         gamesWon++;
         gamesPlayed++;
         displayBoard();
-        exit(0);
+        anotherTurn();
     }
     //check for horizontal wins
     else if (board[0][0] == "O" && board[0][1] == "O" && board[0][2] == "O")
     {
-        cout << "Computer wins!" << endl;
+        cout << "\n\t\tCOMPUTER WINS!" << endl;
         score--;
         gamesPlayed++;
         displayBoard();
-        exit(0);
+        anotherTurn();
     }
     else if (board[1][0] == "O" && board[1][1] == "O" && board[1][2] == "O")
     {
-        cout << "Computer wins!" << endl;
+        cout << "\n\t\tCOMPUTER WINS!" << endl;
         score--;
         gamesPlayed++;
         displayBoard();
-        exit(0);
+        anotherTurn();
     }
     else if (board[2][0] == "O" && board[2][1] == "O" && board[2][2] == "O")
     {
-        cout << "Computer wins!" << endl;
+        cout << "\n\t\tCOMPUTER WINS!" << endl;
         score--;
         gamesPlayed++;
         displayBoard();
-        exit(0);
+        anotherTurn();
     }
     //check for vertical wins
     else if (board[0][0] == "O" && board[1][0] == "O" && board[2][0] == "O")
     {
-        cout << "Computer wins!" << endl;
+        cout << "\n\t\tCOMPUTER WINS!" << endl;
         score--;
         gamesPlayed++;
         displayBoard();
-        exit(0);
+        anotherTurn();
     }
     else if (board[0][1] == "O" && board[1][1] == "O" && board[2][1] == "O")
     {
-        cout << "Computer wins!" << endl;
+        cout << "\n\t\tCOMPUTER WINS!" << endl;
         score--;
         gamesPlayed++;
         displayBoard();
-        exit(0);
+        anotherTurn();
     }
     else if (board[0][2] == "O" && board[1][2] == "O" && board[2][2] == "O")
     {
-        cout << "Computer wins!" << endl;
+        cout << "\n\t\tCOMPUTER WINS!" << endl;
         score--;
         gamesPlayed++;
         displayBoard();
-        exit(0);
+        anotherTurn();
     }
     //check for diagonal wins
     else if (board[0][0] == "O" && board[1][1] == "O" && board[2][2] == "O")
     {
-        cout << "Computer wins!" << endl;
+        cout << "\n\t\tCOMPUTER WINS!" << endl;
         score--;
         gamesPlayed++;
         displayBoard();
-        exit(0);
+        anotherTurn();
     }
     else if (board[0][2] == "O" && board[1][1] == "O" && board[2][0] == "O")
     {
-        cout << "Computer wins!" << endl;
+        cout << "\n\t\tCOMPUTER WINS!" << endl;
         score--;
         gamesPlayed++;
         displayBoard();
-        exit(0);
+        anotherTurn();
     }
 }
 
@@ -262,6 +271,32 @@ void checkTie()
         cout << "It's a tie!" << endl;
         gamesPlayed++;
         displayBoard();
+        anotherTurn();
+    }
+}
+
+void anotherTurn()
+{
+    cout << "\n\n\t\tWould you like to play again? (Y/N): ";
+    cin >> playAgain;
+    if (playAgain == "Y" || playAgain == "y")
+    {
+        gamesWon++;
+        gamesPlayed++;
+        board[0][0] = "1";
+        board[0][1] = "2";
+        board[0][2] = "3";
+        board[1][0] = "4";
+        board[1][1] = "5";
+        board[1][2] = "6";
+        board[2][0] = "7";
+        board[2][1] = "8";
+        board[2][2] = "9";
+        displayBoard();
+    }
+    else
+    {
+        cout << "\n\n\t\tTHANKS FOR PLAYING!" << endl;
         exit(0);
     }
 }
@@ -273,10 +308,11 @@ int main()
     bool valid = false;
     while (!valid)
     {
-        cout << "Welcome to Tic-Tac-Toe!" << endl;
-        cout << "1. Play against the computer" << endl;
-        cout << "2. Play against another player" << endl;
-        cout << "3. Quit" << endl;
+        cout << "\n\t\tWelcome to Tic-Tac-Toe!" << endl;
+        cout << "\n\t1. Play against the computer" << endl;
+        cout << "\t2. Play against another player" << endl;
+        cout << "\t3. Quit" << endl;
+        cout << "\n\tEnter your choice: ";
         cin >> choice;
         if (choice == 1 || choice == 2 || choice == 3)
         {
@@ -287,17 +323,47 @@ int main()
             cout << "Invalid choice. Please try again." << endl;
         }
     }
+
+    system("cls");
+
     if (choice == 1)
     {
         while (gamesPlayed < 9)
         {
+            
+            cout << "\n\t\tGames played: " << gamesPlayed << endl;
+            
+            cout << "\n\t\tPlayer's turn" << "\tCurrent Score: " << score << endl;
+            
             displayBoard();
             player();
-            checkWin();
+
+            cout << "\nLet's see if the computer can win";
+            for(int i = 0; i < 3; i++)
+            {
+                Sleep(1000);
+                cout << ".";
+            }
+
             checkTie();
+            checkWin();
+
+            cout << "\n\t\tComputer's turn" << endl;
             computer();
-            checkWin();
+            displayBoard();
+
+            cout << "\nLet's see if player can beat this move";
+            
+            for(int i = 0; i < 3; i++)
+            {
+                Sleep(1000);
+                cout << ".";
+            }
+    
             checkTie();
+            checkWin();
+
+            system("cls");
         }
     }
     else if (choice == 2)
