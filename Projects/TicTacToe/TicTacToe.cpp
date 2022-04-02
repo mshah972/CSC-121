@@ -38,146 +38,146 @@ int gamesPlayed = 0;
 int gamesWon = 0;
 
 
-int protectData(string prompt)
+int protectData(string prompt)                                                                                  //function to protect the data entered by the user
 {
-    int temp;
-    cout << prompt;
-    cin >> temp;
-    while (temp < 1 || temp > 9 || cin.fail())
+    int temp;                                                                                                   //int variable to store the data entered by the user
+    cout << prompt;                                                                                             //prompt the user to enter the data
+    cin >> temp;                                                                                                //store the data entered by the user                                            
+    while (temp < 1 || temp > 9 || cin.fail())                                                                  //while the data entered by the user is not valid
     {
-        while(cin.fail())
+        while(cin.fail())                                                                                       //while the data entered by the user is not an integer
         {
-            cin.clear();
-            cin.ignore();
-            cout << prompt;
-            cin >> temp;
+            cin.clear();                                                                                        //clear the error flag                          
+            cin.ignore();                                                                                       //ignore the rest of the input
+            cout << prompt;                                                                                     //prompt the user to enter the data again
+            cin >> temp;                                                                                        //store the data entered by the user
         }
         
-        cout << "Invalid input. Please enter a number between 1 and 9." << endl;
-        cin >> temp;
+        cout << "Invalid input. Please enter a number between 1 and 9." << endl;                                //display an error message
+        cin >> temp;                                                                                            //store the data entered by the user                                        
     }
 
-    return temp;
+    return temp;                                                                                                //return the data entered by the user                               
 }
 
-void displayBoard()
+void displayBoard()                                                                                             //function to display the board
 {
     
-    cout << "  " << board[0][0] << " | " << board[0][1] << " | " << board[0][2] << endl;
+    cout << "  " << board[0][0] << " | " << board[0][1] << " | " << board[0][2] << endl;                        //display the first row of the board        
+    cout << "  " << "-----------" << endl;                                                                                          
+    cout << "  " << board[1][0] << " | " << board[1][1] << " | " << board[1][2] << endl;                        //display the second row of the board
     cout << "  " << "-----------" << endl;
-    cout << "  " << board[1][0] << " | " << board[1][1] << " | " << board[1][2] << endl;
-    cout << "  " << "-----------" << endl;
-    cout << "  " << board[2][0] << " | " << board[2][1] << " | " << board[2][2] << endl;
+    cout << "  " << board[2][0] << " | " << board[2][1] << " | " << board[2][2] << endl;                        //display the third row of the board
 
-    cout << endl;
+    cout << endl;                                                                                               //display a blank line                            
     
 }
 
-void player()
+void player()                                                                                                   //function to take the player's move
 {
-    int row, column;
-    bool valid = false;
-    while (!valid)
+    int row, column;                                                                                            //int variables to store the row and column of the player's move                                    
+    bool valid = false;                                                                                         //bool variable to check if the player's move is valid
+    while (!valid)                                                                                              //while vaild is not true
     {
-        cout << "Enter the row number: ";
-        row = protectData("");
-        cout << "Enter the column number: ";
-        column = protectData("");
+        cout << "Enter the row number: ";                                                                       //prompt the user to enter the row number
+        row = protectData("");                                                                                  //store the row number entered by the user                                    
+        cout << "Enter the column number: ";                                                                    //prompt the user to enter the column number
+        column = protectData("");                                                                               //store the column number entered by the user
 
-        if (board[row - 1][column - 1] != "X" && board[row - 1][column - 1] != "O")
+        if (board[row - 1][column - 1] != "X" && board[row - 1][column - 1] != "O")                             //if the player's move is vaild
         {
-            board[row - 1][column - 1] = "X";
-            playerMoves[gamesPlayed] = to_string(row) + to_string(column);
-            valid = true;
+            board[row - 1][column - 1] = "X";                                                                   //store the player's move in the board
+            playerMoves[gamesPlayed] = to_string(row) + to_string(column);                                      //store the player's move in the playerMoves array
+            valid = true;                                                                                       //set valid to true
         }
-        else
+        else                                                                                                    //if the player's move is not vaild
         {
-            cout << "That space is already taken. Please try again." << endl;
-            valid = false;
-        }
-    }
-}
-
-void computer()
-{
-    int row, column;
-    bool valid = false;
-    while (!valid)
-    {
-        row = rand() % 3 + 1;
-        column = rand() % 3 + 1;
-
-        if (board[row - 1][column - 1] != "X" && board[row - 1][column - 1] != "O")
-        {
-            board[row - 1][column - 1] = "O";
-            computerMoves[gamesPlayed] = to_string(row) + to_string(column);
-            valid = true;
+            cout << "That space is already taken. Please try again." << endl;                                   //display an error message         
+            valid = false;                                                                                      //set valid to false
         }
     }
 }
 
-void checkWin()
+void computer()                                                                                                 //function to take the computer's move
+{
+    int row, column;                                                                                            //int variables to store the row and column of the computer's move                              
+    bool valid = false;                                                                                         //bool variable to check if the computer's move is valid
+    while (!valid)                                                                                              //while vaild is not ture
+    {
+        row = rand() % 3 + 1;                                                                                   //generate a random number between 1 and 3
+        column = rand() % 3 + 1;                                                                                //generate a random number between 1 and 3
+
+        if (board[row - 1][column - 1] != "X" && board[row - 1][column - 1] != "O")                             //if the computer's move is vaild
+        {
+            board[row - 1][column - 1] = "O";                                                                   //store the computer's move in the board                                   
+            computerMoves[gamesPlayed] = to_string(row) + to_string(column);                                    //store the computer's move in the computerMoves array
+            valid = true;                                                                                       //set valid to true
+        }
+    }
+}
+
+void checkWin()                                                                                                 //function to check if the game has been won
 {
 
-    cout << endl;
+    cout << endl;                                                                                               //display a blank line
 
-    if (board[0][0] == "X" && board[0][1] == "X" && board[0][2] == "X")
+    if (board[0][0] == "X" && board[0][1] == "X" && board[0][2] == "X")                                         //if the first row of the board is filled with X's
     {
-        cout << "\n\t\tPLAYER WINS!" << endl;
-        score++;
-        gamesWon++;
-        gamesPlayed++;
-        displayBoard();
-        anotherTurn();
+        cout << "\n\t\tPLAYER WINS!" << endl;                                                                   //display a message saying the player wins                                 
+        score++;                                                                                                //increase the score by 1
+        gamesWon++;                                                                                             //increase the number of games won by the player by 1
+        gamesPlayed++;                                                                                          //increase the number of games played by 1
+        displayBoard();                                                                                         //display the board
+        anotherTurn();                                                                                          //call anotherTurn function
     }
-    else if (board[1][0] == "X" && board[1][1] == "X" && board[1][2] == "X")
+    else if (board[1][0] == "X" && board[1][1] == "X" && board[1][2] == "X")                                    //if the second row of the board is filled with X's
     {
-        cout << "\n\t\tPLAYER WINS!" << endl;
-        score++;
-        gamesWon++;
-        gamesPlayed++;
-        displayBoard();
-        anotherTurn();
+        cout << "\n\t\tPLAYER WINS!" << endl;                                                                   //display a message saying the player wins
+        score++;                                                                                                //increase the score by 1
+        gamesWon++;                                                                                             //increase the number of games won by the player by 1
+        gamesPlayed++;                                                                                          //increase the number of games played by 1
+        displayBoard();                                                                                         //display the board
+        anotherTurn();                                                                                          //call anotherTurn function
     }
-    else if (board[2][0] == "X" && board[2][1] == "X" && board[2][2] == "X")
+    else if (board[2][0] == "X" && board[2][1] == "X" && board[2][2] == "X")                                    //if the third row of the board is filled with X's
     {
-        cout << "\n\t\tPLAYER WINS!" << endl;
-        score++;
-        gamesWon++;
-        gamesPlayed++;
-        displayBoard();
-        anotherTurn();
+        cout << "\n\t\tPLAYER WINS!" << endl;                                                                   //display a message saying the player wins
+        score++;                                                                                                //increase the score by 1
+        gamesWon++;                                                                                             //increase the number of games won by the player by 1
+        gamesPlayed++;                                                                                          //increase the number of games played by 1
+        displayBoard();                                                                                         //display the board
+        anotherTurn();                                                                                          //call anotherTurn function
     }
     //check for vertical wins
-    else if (board[0][0] == "X" && board[1][0] == "X" && board[2][0] == "X")
+    else if (board[0][0] == "X" && board[1][0] == "X" && board[2][0] == "X")                                    //if the first column of the board is filled with X's
     {
-        cout << "\n\t\tPLAYER WINS!" << endl;
-        score++;
-        gamesWon++;
-        gamesPlayed++;
-        displayBoard();
-        anotherTurn();
+        cout << "\n\t\tPLAYER WINS!" << endl;                                                                   //display a message saying the player wins
+        score++;                                                                                                //increase the score by 1
+        gamesWon++;                                                                                             //increase the number of games won by the player by 1
+        gamesPlayed++;                                                                                          //increase the number of games played by 1
+        displayBoard();                                                                                         //display the board
+        anotherTurn();                                                                                          //call anotherTurn function
     }
-    else if (board[0][1] == "X" && board[1][1] == "X" && board[2][1] == "X")
+    else if (board[0][1] == "X" && board[1][1] == "X" && board[2][1] == "X")                                    //if the second column of the board is filled with X's
     {
-        cout << "\n\t\tPLAYER WINS!" << endl;
-        score++;
-        gamesWon++;
-        gamesPlayed++;
-        displayBoard();
-        anotherTurn();
+        cout << "\n\t\tPLAYER WINS!" << endl;                                                                   //display a message saying the player wins
+        score++;                                                                                                //increase the score by 1
+        gamesWon++;                                                                                             //increase the number of games won by the player by 1
+        gamesPlayed++;                                                                                          //increase the number of games played by 1
+        displayBoard();                                                                                         //display the board
+        anotherTurn();                                                                                          //call anotherTurn function
     }
-    else if (board[0][2] == "X" && board[1][2] == "X" && board[2][2] == "X")
-    {
-        cout << "\n\t\tPLAYER WINS!" << endl;
-        score++;
-        gamesWon++;
-        gamesPlayed++;
-        displayBoard();
-        anotherTurn();
+    else if (board[0][2] == "X" && board[1][2] == "X" && board[2][2] == "X")                                    //if the third column of the board is filled with X's
+    {   
+        cout << "\n\t\tPLAYER WINS!" << endl;                                                                   //display a message saying the player wins
+        score++;                                                                                                //increase the score by 1
+        gamesWon++;                                                                                             //increase the number of games won by the player by 1
+        gamesPlayed++;                                                                                          //increase the number of games played by 1
+        displayBoard();                                                                                         //display the board
+        anotherTurn();                                                                                          //call anotherTurn function
     }
     //check for diagonal wins
-    else if (board[0][0] == "X" && board[1][1] == "X" && board[2][2] == "X")
+    else if (board[0][0] == "X" && board[1][1] == "X" && board[2][2] == "X")                                    //if the top left to bottom right diagonal of the board is filled with X's
     {
         cout << "\n\t\tPLAYER WINS!" << endl;
         score++;
@@ -186,7 +186,7 @@ void checkWin()
         displayBoard();
         anotherTurn();
     }
-    else if (board[0][2] == "X" && board[1][1] == "X" && board[2][0] == "X")
+    else if (board[0][2] == "X" && board[1][1] == "X" && board[2][0] == "X")                                    //if the top right to bottom left diagonal of the board is filled wit X's
     {
         cout << "\n\t\tPLAYER WINS!" << endl;
         score++;
@@ -196,7 +196,7 @@ void checkWin()
         anotherTurn();
     }
     //check for horizontal wins
-    else if (board[0][0] == "O" && board[0][1] == "O" && board[0][2] == "O")
+    else if (board[0][0] == "O" && board[0][1] == "O" && board[0][2] == "O")                                    //similar for computer's move to check win
     {
         cout << "\n\t\tCOMPUTER WINS!" << endl;
         score--;
@@ -264,26 +264,39 @@ void checkWin()
     }
 }
 
-void checkTie()
+void checkTie()                                                                                                 //function to check for a tie
 {
-    if (gamesPlayed == 9)
+    int tie = 0;                                                                                                //variable to check if there is a tie
+    for (int i = 0; i < 3; i++)                                                                                 //for loop to check each row
     {
-        cout << "It's a tie!" << endl;
-        gamesPlayed++;
-        displayBoard();
-        anotherTurn();
+        for (int j = 0; j < 3; j++)                                                                             //for loop to check each column
+        {
+            if (board[i][j] == " ")                                                                             //if the board is not filled
+            {
+                tie = 1;                                                                                        //there is a tie
+                cout << "\n\n\t\tTIE!" << endl;                                                                 //display a message saying the game is a tie
+                gamesPlayed++;                                                                                  //increase the number of games played by 1
+                displayBoard();                                                                                 //display the board
+                anotherTurn();                                                                                  //call anotherTurn function
+            }
+        }
     }
-}
-
-void anotherTurn()
-{
-    cout << "\n\n\t\tWould you like to play again? (Y/N): ";
-    cin >> playAgain;
-    if (playAgain == "Y" || playAgain == "y")
+    if (tie == 0)                                                                                               //if there is no tie
     {
-        gamesWon++;
-        gamesPlayed++;
-        board[0][0] = "1";
+        gamesPlayed++;                                                                                          //increase the number of games played by 1
+        displayBoard();                                                                                         //display the board
+        anotherTurn();                                                                                          //call anotherTurn function
+    }
+}                                                                                 
+
+
+void anotherTurn()                                                                                              //function to ask the user if they want to play another game
+{
+    cout << "\n\n\t\tWould you like to play again? (Y/N): ";                                                    //ask the user if they want to play another game
+    cin >> playAgain;                                                                                           //get the user's response
+    if (playAgain == "Y" || playAgain == "y")                                                                   //if user response is y
+    {
+        board[0][0] = "1";                                                                                      //reset the board                                  
         board[0][1] = "2";
         board[0][2] = "3";
         board[1][0] = "4";
@@ -292,97 +305,103 @@ void anotherTurn()
         board[2][0] = "7";
         board[2][1] = "8";
         board[2][2] = "9";
-        displayBoard();
+        displayBoard();                                                                                         //display the board
     }
-    else
+    else                                                                                                        //if user response is n
     {
-        cout << "\n\n\t\tTHANKS FOR PLAYING!" << endl;
-        exit(0);
+        cout << "\n\n\t\tTHANKS FOR PLAYING!" << endl;                                                          //display a message saying the game is over
+        exit(0);                                                                                                //exit the program
     }
 }
 
-int main()
+int main()                                                                                                      //this is my main function
 {
-    srand(time(NULL));
-    int choice;
-    bool valid = false;
-    while (!valid)
+    srand(time(NULL));                                                                                          //seed the random number generator
+    int choice;                                                                                                 //variable to store the user's choice
+    bool valid = false;                                                                                         //variable to check if the user's choice is valid
+    while (!valid)                                                                                              //if vaild is not true
     {
-        cout << "\n\t\tWelcome to Tic-Tac-Toe!" << endl;
-        cout << "\n\t1. Play against the computer" << endl;
-        cout << "\t2. Play against another player" << endl;
+        cout << "\n\t\tWelcome to Tic-Tac-Toe!" << endl;                                                        //display a welcome message
+        cout << "\n\t1. Play against the computer" << endl;                                                     //display the options
+        cout << "\t2. Play against another player" << endl;                                                     
         cout << "\t3. Quit" << endl;
-        cout << "\n\tEnter your choice: ";
-        cin >> choice;
-        if (choice == 1 || choice == 2 || choice == 3)
+        cout << "\n\tEnter your choice: ";                                                                      //ask the user to enter their choice
+        cin >> choice;                                                                                          //get the user's choice
+        if (choice == 1 || choice == 2 || choice == 3)                                                          //if the user's choice is vaild
         {
-            valid = true;
-        }
-        else
+            valid = true;                                                                                       //set valid to true
+        }   
+        else                                                                                                    //if the user's choice is not vaild
         {
-            cout << "Invalid choice. Please try again." << endl;
+            cout << "Invalid choice. Please try again." << endl;                                                //display an error message
         }
     }
 
-    system("cls");
+    system("cls");                                                                                              //clear the screen
 
-    if (choice == 1)
+    if (choice == 1)                                                                                            //if user choice is 1
     {
-        while (gamesPlayed < 9)
+        while (gamesPlayed < 9)                                                                                 //while the number of games played is less than 9
         {
             
-            cout << "\n\t\tGames played: " << gamesPlayed << endl;
+            cout << "\n\t\tGames played: " << gamesPlayed << endl;                                              //display the number of games played
             
-            cout << "\n\t\tPlayer's turn" << "\tCurrent Score: " << score << endl;
+            cout << "\n\t\tPlayer's turn" << "\tCurrent Score: " << score << endl;                              //display the current score
             
-            displayBoard();
-            player();
+            displayBoard();                                                                                     //display the board
+            player();                                                                                           //call player function
 
-            cout << "\nLet's see if the computer can win";
-            for(int i = 0; i < 3; i++)
+            cout << "\nLet's see if the computer can win";                                                      //display a message saying the program is checking for a win
+            for(int i = 0; i < 3; i++)                                                                          //for loop to display ... so the user knows the program is working
             {
-                Sleep(1000);
-                cout << ".";
+                Sleep(1000);                                                                                    //sleep for 1 second                                    
+                cout << ".";                                                                                    //display a dot
             }
 
-            checkTie();
-            checkWin();
+            checkTie();                                                                                         //call checkTie function
+            checkWin();                                                                                         //call checkWin function
 
-            cout << "\n\t\tComputer's turn" << endl;
-            computer();
-            displayBoard();
+            cout << "\n\t\tComputer's turn" << endl;                                                            //display a message saying the computer's turn
+            computer();                                                                                         //call computer function
+            displayBoard();                                                                                     //display the board
 
-            cout << "\nLet's see if player can beat this move";
+            cout << "\nLet's see if player can beat this move";                                                 //display a message saying the program is checking for a win
             
-            for(int i = 0; i < 3; i++)
+            for(int i = 0; i < 3; i++)                                                                          //for loop to display ... so the user knows the program is working
             {
-                Sleep(1000);
-                cout << ".";
+                Sleep(1000);                                                                                    //sleep for 1 second                                            
+                cout << ".";                                                                                    //display a dot
             }
     
-            checkTie();
-            checkWin();
+            checkTie();                                                                                         //call checkTie function
+            checkWin();                                                                                         //call checkWin function
 
-            system("cls");
+            system("cls");                                                                                      //clear the screen
         }
     }
-    else if (choice == 2)
+    else if (choice == 2)                                                                                       //if user choice is 2
     {
-        while (gamesPlayed < 9)
+        while (gamesPlayed < 9)                                                                                 //while the number of games played is less than 9
         {
-            displayBoard();
-            player();
-            checkWin();
-            checkTie();
-            player();
-            checkWin();
-            checkTie();
+            cout << "\n\t\tGames played: " << gamesPlayed << endl;                                              //display the number of games played
+            cout << "\n\t\tPlayer 1's turn" << "\tCurrent Score: " << score << endl;                            //display the current score
+            displayBoard();                                                                                     //display the board
+            player();                                                                                           //call player function
+            checkTie();                                                                                         //call checkTie function
+            checkWin();                                                                                         //call checkWin function
+            cout << "\n\t\tPlayer 2's turn" << endl;                                                            //display a message saying the computer's turn
+            player();                                                                                           //call player function
+            displayBoard();                                                                                     //display the board
+            checkTie();                                                                                         //call checkTie function
+            checkWin();                                                                                         //call checkWin function
+            system("cls");                                                                                      //clear the screen
         }
     }
-    else if (choice == 3)
+    else if (choice == 3)                                                                                       //if user choice is 3
     {
-        cout << "Thanks for playing!" << endl;
-        exit(0);
+        cout << "Thanks for playing!" << endl;                                                                  //display a message saying the game is over
+        exit(0);                                                                                                //exit the program
     }
+    
     return 0;
 }
