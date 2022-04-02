@@ -1,0 +1,44 @@
+T/F - Boolean Literals (Evaluation) ==
+
+When an eqaution inserts a double == it it asking the compiler to evaluate the correctness of the equation and return True/False = 1/0
+
+If true then the compiler will output = true (and false)
+
+Error related to miss splled error is known as syntax error.
+
+If condition then
+    if the condition is True then one or more statements are executed,
+    one after another, unitl End IF statement
+    (notice the automatic indentation)
+End If
+    if the condition is false
+
+
+Relational operators < > =
+
+< less than
+> Greater than
+<= Less than OR equal
+>= Greater then OR equal
+== is it equal?
+!= <> is NOT equal
+
+Boolean IF logic - always test for True
+
+bool x = true;
+
+if(x == true)
+    cout << "\n x == True? --> " << (x == true);
+
+if(x)
+    cout << "\n x = Not True? " << (x != true);
+
+
+If / Else - One or the other will run - OR
+
+Protecting Data Range - 1 change only - Exit(0)
+
+PU & enter Decimal pt # -> convert to int round up/down
+
+Conditional operator ? True : False
+

@@ -1,0 +1,3 @@
+/Volumes/Extreme SSD/Harper College CS Course/CSC 121/Lesson 1/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+/Volumes/Extreme SSD/Harper College CS Course/CSC 121/Lesson 1/cmake-build-debug/CMakeFiles/edit_cache.dir
+/Volumes/Extreme SSD/Harper College CS Course/CSC 121/Lesson 1/cmake-build-debug/CMakeFiles/Lesson_1.dir
