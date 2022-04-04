@@ -43,7 +43,7 @@ int protectData(string prompt)                                                  
     int temp;                                                                                                   //int variable to store the data entered by the user
     cout << prompt;                                                                                             //prompt the user to enter the data
     cin >> temp;                                                                                                //store the data entered by the user                                            
-    while (temp < 1 || temp > 9 || cin.fail())                                                                  //while the data entered by the user is not valid
+    while (temp < 1 || temp > 3 || cin.fail())                                                                  //while the data entered by the user is not valid
     {
         while(cin.fail())                                                                                       //while the data entered by the user is not an integer
         {
@@ -53,8 +53,9 @@ int protectData(string prompt)                                                  
             cin >> temp;                                                                                        //store the data entered by the user
         }
         
-        cout << "Invalid input. Please enter a number between 1 and 9." << endl;                                //display an error message
-        cin >> temp;                                                                                            //store the data entered by the user                                        
+        cout << "\nInvalid input. Please enter a number between 1 and 3: ";                                     //display an error message
+        cin >> temp;                                                                                            //store the data entered by the user 
+        cout << endl;                                       
     }
 
     return temp;                                                                                                //return the data entered by the user                               
@@ -62,11 +63,12 @@ int protectData(string prompt)                                                  
 
 void displayBoard()                                                                                             //function to display the board
 {
-    
+    cout << endl;                                                                                               //display a new line
+    cout << endl;                                                                                               //display a new line
     cout << "  " << board[0][0] << " | " << board[0][1] << " | " << board[0][2] << endl;                        //display the first row of the board        
-    cout << "  " << "-----------" << endl;                                                                                          
+    cout << "-------------" << endl;                                                                                          
     cout << "  " << board[1][0] << " | " << board[1][1] << " | " << board[1][2] << endl;                        //display the second row of the board
-    cout << "  " << "-----------" << endl;
+    cout << "-------------" << endl;
     cout << "  " << board[2][0] << " | " << board[2][1] << " | " << board[2][2] << endl;                        //display the third row of the board
 
     cout << endl;                                                                                               //display a blank line                            
@@ -79,9 +81,9 @@ void player()                                                                   
     bool valid = false;                                                                                         //bool variable to check if the player's move is valid
     while (!valid)                                                                                              //while vaild is not true
     {
-        cout << "Enter the row number: ";                                                                       //prompt the user to enter the row number
+        cout << "\nEnter the row number: ";                                                                       //prompt the user to enter the row number
         row = protectData("");                                                                                  //store the row number entered by the user                                    
-        cout << "Enter the column number: ";                                                                    //prompt the user to enter the column number
+        cout << "\nEnter the column number: ";                                                                    //prompt the user to enter the column number
         column = protectData("");                                                                               //store the column number entered by the user
 
         if (board[row - 1][column - 1] != "X" && board[row - 1][column - 1] != "O")                             //if the player's move is vaild
@@ -123,8 +125,9 @@ void checkWin()                                                                 
 
     if (board[0][0] == "X" && board[0][1] == "X" && board[0][2] == "X")                                         //if the first row of the board is filled with X's
     {
+        system("color 2");
         cout << "\n\t\tPLAYER WINS!" << endl;                                                                   //display a message saying the player wins                                 
-        score++;                                                                                                //increase the score by 1
+        score += 100;                                                                                           //increase the score by 100
         gamesWon++;                                                                                             //increase the number of games won by the player by 1
         gamesPlayed++;                                                                                          //increase the number of games played by 1
         displayBoard();                                                                                         //display the board
@@ -132,8 +135,9 @@ void checkWin()                                                                 
     }
     else if (board[1][0] == "X" && board[1][1] == "X" && board[1][2] == "X")                                    //if the second row of the board is filled with X's
     {
+        system("color 2");
         cout << "\n\t\tPLAYER WINS!" << endl;                                                                   //display a message saying the player wins
-        score++;                                                                                                //increase the score by 1
+        score += 100;                                                                                           //increase the score by 100
         gamesWon++;                                                                                             //increase the number of games won by the player by 1
         gamesPlayed++;                                                                                          //increase the number of games played by 1
         displayBoard();                                                                                         //display the board
@@ -141,8 +145,9 @@ void checkWin()                                                                 
     }
     else if (board[2][0] == "X" && board[2][1] == "X" && board[2][2] == "X")                                    //if the third row of the board is filled with X's
     {
+        system("color 2");
         cout << "\n\t\tPLAYER WINS!" << endl;                                                                   //display a message saying the player wins
-        score++;                                                                                                //increase the score by 1
+        score += 100;                                                                                           //increase the score by 100
         gamesWon++;                                                                                             //increase the number of games won by the player by 1
         gamesPlayed++;                                                                                          //increase the number of games played by 1
         displayBoard();                                                                                         //display the board
@@ -151,8 +156,9 @@ void checkWin()                                                                 
     //check for vertical wins
     else if (board[0][0] == "X" && board[1][0] == "X" && board[2][0] == "X")                                    //if the first column of the board is filled with X's
     {
+        system("color 2");
         cout << "\n\t\tPLAYER WINS!" << endl;                                                                   //display a message saying the player wins
-        score++;                                                                                                //increase the score by 1
+        score += 100;                                                                                           //increase the score by 100
         gamesWon++;                                                                                             //increase the number of games won by the player by 1
         gamesPlayed++;                                                                                          //increase the number of games played by 1
         displayBoard();                                                                                         //display the board
@@ -160,8 +166,9 @@ void checkWin()                                                                 
     }
     else if (board[0][1] == "X" && board[1][1] == "X" && board[2][1] == "X")                                    //if the second column of the board is filled with X's
     {
+        system("color 2");
         cout << "\n\t\tPLAYER WINS!" << endl;                                                                   //display a message saying the player wins
-        score++;                                                                                                //increase the score by 1
+        score += 100;                                                                                           //increase the score by 100
         gamesWon++;                                                                                             //increase the number of games won by the player by 1
         gamesPlayed++;                                                                                          //increase the number of games played by 1
         displayBoard();                                                                                         //display the board
@@ -169,8 +176,9 @@ void checkWin()                                                                 
     }
     else if (board[0][2] == "X" && board[1][2] == "X" && board[2][2] == "X")                                    //if the third column of the board is filled with X's
     {   
+        system("color 2");
         cout << "\n\t\tPLAYER WINS!" << endl;                                                                   //display a message saying the player wins
-        score++;                                                                                                //increase the score by 1
+        score += 100;                                                                                           //increase the score by 100
         gamesWon++;                                                                                             //increase the number of games won by the player by 1
         gamesPlayed++;                                                                                          //increase the number of games played by 1
         displayBoard();                                                                                         //display the board
@@ -179,8 +187,9 @@ void checkWin()                                                                 
     //check for diagonal wins
     else if (board[0][0] == "X" && board[1][1] == "X" && board[2][2] == "X")                                    //if the top left to bottom right diagonal of the board is filled with X's
     {
+        system("color 2");
         cout << "\n\t\tPLAYER WINS!" << endl;
-        score++;
+        score += 100;
         gamesWon++;
         gamesPlayed++;
         displayBoard();
@@ -188,8 +197,9 @@ void checkWin()                                                                 
     }
     else if (board[0][2] == "X" && board[1][1] == "X" && board[2][0] == "X")                                    //if the top right to bottom left diagonal of the board is filled wit X's
     {
+        system("color 2");
         cout << "\n\t\tPLAYER WINS!" << endl;
-        score++;
+        score += 100;
         gamesWon++;
         gamesPlayed++;
         displayBoard();
@@ -198,24 +208,27 @@ void checkWin()                                                                 
     //check for horizontal wins
     else if (board[0][0] == "O" && board[0][1] == "O" && board[0][2] == "O")                                    //similar for computer's move to check win
     {
+        system("color 4");                                                                                      //set the console text color to red
         cout << "\n\t\tCOMPUTER WINS!" << endl;
-        score--;
+        score -= 50;
         gamesPlayed++;
         displayBoard();
         anotherTurn();
     }
     else if (board[1][0] == "O" && board[1][1] == "O" && board[1][2] == "O")
     {
+        system("color 4");
         cout << "\n\t\tCOMPUTER WINS!" << endl;
-        score--;
+        score -= 50;
         gamesPlayed++;
         displayBoard();
         anotherTurn();
     }
     else if (board[2][0] == "O" && board[2][1] == "O" && board[2][2] == "O")
     {
+        system("color 4");
         cout << "\n\t\tCOMPUTER WINS!" << endl;
-        score--;
+        score -= 50;
         gamesPlayed++;
         displayBoard();
         anotherTurn();
@@ -223,24 +236,27 @@ void checkWin()                                                                 
     //check for vertical wins
     else if (board[0][0] == "O" && board[1][0] == "O" && board[2][0] == "O")
     {
+        system("color 4");
         cout << "\n\t\tCOMPUTER WINS!" << endl;
-        score--;
+        score -= 50;
         gamesPlayed++;
         displayBoard();
         anotherTurn();
     }
     else if (board[0][1] == "O" && board[1][1] == "O" && board[2][1] == "O")
     {
+        system("color 4");
         cout << "\n\t\tCOMPUTER WINS!" << endl;
-        score--;
+        score -= 50;
         gamesPlayed++;
         displayBoard();
         anotherTurn();
     }
     else if (board[0][2] == "O" && board[1][2] == "O" && board[2][2] == "O")
     {
+        system("color 4");
         cout << "\n\t\tCOMPUTER WINS!" << endl;
-        score--;
+        score -= 50;
         gamesPlayed++;
         displayBoard();
         anotherTurn();
@@ -248,16 +264,18 @@ void checkWin()                                                                 
     //check for diagonal wins
     else if (board[0][0] == "O" && board[1][1] == "O" && board[2][2] == "O")
     {
+        system("color 4");
         cout << "\n\t\tCOMPUTER WINS!" << endl;
-        score--;
+        score -= 50;
         gamesPlayed++;
         displayBoard();
         anotherTurn();
     }
     else if (board[0][2] == "O" && board[1][1] == "O" && board[2][0] == "O")
     {
+        system("color 4");
         cout << "\n\t\tCOMPUTER WINS!" << endl;
-        score--;
+        score -= 50;
         gamesPlayed++;
         displayBoard();
         anotherTurn();
@@ -281,12 +299,6 @@ void checkTie()                                                                 
             }
         }
     }
-    if (tie == 0)                                                                                               //if there is no tie
-    {
-        gamesPlayed++;                                                                                          //increase the number of games played by 1
-        displayBoard();                                                                                         //display the board
-        anotherTurn();                                                                                          //call anotherTurn function
-    }
 }                                                                                 
 
 
@@ -296,6 +308,7 @@ void anotherTurn()                                                              
     cin >> playAgain;                                                                                           //get the user's response
     if (playAgain == "Y" || playAgain == "y")                                                                   //if user response is y
     {
+        system("color ");                                                                                      //set the console text color to whites
         board[0][0] = "1";                                                                                      //reset the board                                  
         board[0][1] = "2";
         board[0][2] = "3";
@@ -309,7 +322,18 @@ void anotherTurn()                                                              
     }
     else                                                                                                        //if user response is n
     {
+        system("cls");                                                                                          //clear the screen
+        system("color 3");                                                                                      //change the text color to green
+        
+        cout << "\n\n\tYour score is: " << score << endl;                                                       //display the user's score
+        cout << "\tGames won: " << gamesWon << endl;                                                            //display the number of games won
+        cout << "\tGames played: " << gamesPlayed << endl;                                                      //display the number of games played
+        cout << "\tGames lost: " << gamesPlayed - gamesWon << endl;                                             //display the number of games lost
+        cout << "\tPercentage of games won: " << (double)gamesWon / gamesPlayed * 100 << "%" << endl;           //display the percentage of games won
+
         cout << "\n\n\t\tTHANKS FOR PLAYING!" << endl;                                                          //display a message saying the game is over
+        cout << "\n" << endl;
+        
         exit(0);                                                                                                //exit the program
     }
 }
@@ -349,17 +373,19 @@ int main()                                                                      
             cout << "\n\t\tPlayer's turn" << "\tCurrent Score: " << score << endl;                              //display the current score
             
             displayBoard();                                                                                     //display the board
+            system("color 2");
             player();                                                                                           //call player function
-
+            displayBoard();                                                                                     //display the board
             cout << "\nLet's see if the computer can win";                                                      //display a message saying the program is checking for a win
             for(int i = 0; i < 3; i++)                                                                          //for loop to display ... so the user knows the program is working
             {
                 Sleep(1000);                                                                                    //sleep for 1 second                                    
                 cout << ".";                                                                                    //display a dot
             }
-
             checkTie();                                                                                         //call checkTie function
             checkWin();                                                                                         //call checkWin function
+
+            system("color 4");
 
             cout << "\n\t\tComputer's turn" << endl;                                                            //display a message saying the computer's turn
             computer();                                                                                         //call computer function
@@ -399,7 +425,9 @@ int main()                                                                      
     }
     else if (choice == 3)                                                                                       //if user choice is 3
     {
-        cout << "Thanks for playing!" << endl;                                                                  //display a message saying the game is over
+        system("color 09");                                                                                     //change the text color to green
+        cout << "\n\n\t\tTHANKS FOR PLAYING!" << endl;                                                          //display a message saying the game is over
+        cout << endl;
         exit(0);                                                                                                //exit the program
     }
     
