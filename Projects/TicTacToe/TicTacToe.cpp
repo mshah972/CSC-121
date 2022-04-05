@@ -8,6 +8,7 @@
 #include <string>
 #include <iomanip>
 #include <windows.h>
+#include <fstream>
 using namespace std;
 
 //string array for the board to be used in the game and the board to be used in the display function
@@ -20,6 +21,7 @@ string computerMoves[9] = { "", "", "", "", "", "", "", "", "" };
 
 //string varible for play again
 string playAgain;
+string whoWon;
 
 //function prototypes for the game functions
 void displayBoard();
@@ -36,6 +38,7 @@ string choice;
 int score = 0;
 int gamesPlayed = 0;
 int gamesWon = 0;
+int gamesTied = 0;
 
 
 int protectData(string prompt)                                                                                  //function to protect the data entered by the user
@@ -130,8 +133,21 @@ void checkWin()                                                                 
         score += 100;                                                                                           //increase the score by 100
         gamesWon++;                                                                                             //increase the number of games won by the player by 1
         gamesPlayed++;                                                                                          //increase the number of games played by 1
+        whoWon = "Player";                                                                                      //set whoWon to "Player"
+        
+        ofstream outFile;                                                                                       //create an output file stream
+        outFile.open("TTTwins.txt", ios::app);                                                                  //open the output file stream
+        outFile << whoWon << " has won this game!" << endl;                                                     //write the name of the player who won the game to the output file
+        outFile << "The Score is: " << score << endl;                                                           //write the score to the output file
+        outFile << "The number of games won is: " << gamesWon << endl;                                          //write the number of games won to the output file
+        outFile << "The number of games lost is: " << gamesWon - gamesPlayed << endl;                           //write the number of games lost to the output file
+        outFile << "The number of games played is: " << gamesPlayed << endl;                                    //write the number of games played to the output file
+        outFile << "The number of games tied is: " << gamesTied << "\n" << endl;                                //write the number of games tied to the output file
+        outFile.close();                                                                                        //close the output file stream                          
+
         displayBoard();                                                                                         //display the board
         anotherTurn();                                                                                          //call anotherTurn function
+        
     }
     else if (board[1][0] == "X" && board[1][1] == "X" && board[1][2] == "X")                                    //if the second row of the board is filled with X's
     {
@@ -140,8 +156,21 @@ void checkWin()                                                                 
         score += 100;                                                                                           //increase the score by 100
         gamesWon++;                                                                                             //increase the number of games won by the player by 1
         gamesPlayed++;                                                                                          //increase the number of games played by 1
+        whoWon = "Player";                                                                                      //set whoWon to "Player"
+        
+        ofstream outFile;                                                                                       //create an output file stream
+        outFile.open("TTTwins.txt", ios::app);                                                                  //open the output file stream                                         
+        outFile << whoWon << " has won this game!" << endl;                                                     //write the name of the player who won the game to the output file
+        outFile << "The Score is: " << score << endl;                                                           //write the score to the output file
+        outFile << "The number of games won is: " << gamesWon << endl;                                          //write the number of games won to the output file
+        outFile << "The number of games lost is: " << gamesWon - gamesPlayed << endl;                           //write the number of games lost to the output file
+        outFile << "The number of games played is: " << gamesPlayed << endl;                                    //write the number of games played to the output file
+        outFile << "The number of games tied is: " << gamesTied << "\n" << endl;                                //write the number of games tied to the output file
+        outFile.close();                                                                                        //close the output file stream
+
         displayBoard();                                                                                         //display the board
         anotherTurn();                                                                                          //call anotherTurn function
+        
     }
     else if (board[2][0] == "X" && board[2][1] == "X" && board[2][2] == "X")                                    //if the third row of the board is filled with X's
     {
@@ -150,8 +179,21 @@ void checkWin()                                                                 
         score += 100;                                                                                           //increase the score by 100
         gamesWon++;                                                                                             //increase the number of games won by the player by 1
         gamesPlayed++;                                                                                          //increase the number of games played by 1
+        whoWon = "Player";                                                                                      //set whoWon to "Player"
+         
+        ofstream outFile;
+        outFile.open("TTTwins.txt", ios::app);
+        outFile << whoWon << " has won this game!" << endl;
+        outFile << "The Score is: " << score << endl;
+        outFile << "The number of games won is: " << gamesWon << endl;
+        outFile << "The number of games lost is: " << gamesWon - gamesPlayed << endl;
+        outFile << "The number of games played is: " << gamesPlayed << endl;
+        outFile << "The number of games tied is: " << gamesTied << "\n" << endl;                      
+        outFile.close();
+
         displayBoard();                                                                                         //display the board
         anotherTurn();                                                                                          //call anotherTurn function
+        
     }
     //check for vertical wins
     else if (board[0][0] == "X" && board[1][0] == "X" && board[2][0] == "X")                                    //if the first column of the board is filled with X's
@@ -161,8 +203,21 @@ void checkWin()                                                                 
         score += 100;                                                                                           //increase the score by 100
         gamesWon++;                                                                                             //increase the number of games won by the player by 1
         gamesPlayed++;                                                                                          //increase the number of games played by 1
+        whoWon = "Player";                                                                                      //set whoWon to "Player"
+         
+        ofstream outFile;
+        outFile.open("TTTwins.txt", ios::app);
+        outFile << whoWon << " has won this game!" << endl;
+        outFile << "The Score is: " << score << endl;
+        outFile << "The number of games won is: " << gamesWon << endl;
+        outFile << "The number of games lost is: " << gamesWon - gamesPlayed << endl;
+        outFile << "The number of games played is: " << gamesPlayed << endl;
+        outFile << "The number of games tied is: " << gamesTied << "\n" << endl;        
+        outFile.close();
+
         displayBoard();                                                                                         //display the board
         anotherTurn();                                                                                          //call anotherTurn function
+        
     }
     else if (board[0][1] == "X" && board[1][1] == "X" && board[2][1] == "X")                                    //if the second column of the board is filled with X's
     {
@@ -171,8 +226,21 @@ void checkWin()                                                                 
         score += 100;                                                                                           //increase the score by 100
         gamesWon++;                                                                                             //increase the number of games won by the player by 1
         gamesPlayed++;                                                                                          //increase the number of games played by 1
+        whoWon = "Player";                                                                                      //set whoWon to "Player"
+         
+        ofstream outFile;
+        outFile.open("TTTwins.txt", ios::app);
+        outFile << whoWon << " has won this game!" << endl;
+        outFile << "The Score is: " << score << endl;
+        outFile << "The number of games won is: " << gamesWon << endl;
+        outFile << "The number of games lost is: " << gamesWon - gamesPlayed << endl;
+        outFile << "The number of games played is: " << gamesPlayed << endl;
+        outFile << "The number of games tied is: " << gamesTied << "\n" << endl;
+        outFile.close();
+
         displayBoard();                                                                                         //display the board
         anotherTurn();                                                                                          //call anotherTurn function
+        
     }
     else if (board[0][2] == "X" && board[1][2] == "X" && board[2][2] == "X")                                    //if the third column of the board is filled with X's
     {   
@@ -181,8 +249,21 @@ void checkWin()                                                                 
         score += 100;                                                                                           //increase the score by 100
         gamesWon++;                                                                                             //increase the number of games won by the player by 1
         gamesPlayed++;                                                                                          //increase the number of games played by 1
+        whoWon = "Player";                                                                                      //set whoWon to "Player"
+         
+        ofstream outFile;
+        outFile.open("TTTwins.txt", ios::app);
+        outFile << whoWon << " has won this game!" << endl;
+        outFile << "The Score is: " << score << endl;
+        outFile << "The number of games won is: " << gamesWon << endl;
+        outFile << "The number of games lost is: " << gamesWon - gamesPlayed << endl;
+        outFile << "The number of games played is: " << gamesPlayed << endl;
+        outFile << "The number of games tied is: " << gamesTied << "\n" << endl;
+        outFile.close();
+
         displayBoard();                                                                                         //display the board
         anotherTurn();                                                                                          //call anotherTurn function
+        
     }
     //check for diagonal wins
     else if (board[0][0] == "X" && board[1][1] == "X" && board[2][2] == "X")                                    //if the top left to bottom right diagonal of the board is filled with X's
@@ -192,9 +273,21 @@ void checkWin()                                                                 
         score += 100;
         gamesWon++;
         gamesPlayed++;
+        whoWon = "Player";
+         
+        ofstream outFile;
+        outFile.open("TTTwins.txt", ios::app);
+        outFile << whoWon << " has won this game!" << endl;
+        outFile << "The Score is: " << score << endl;
+        outFile << "The number of games won is: " << gamesWon << endl;
+        outFile << "The number of games lost is: " << gamesWon - gamesPlayed << endl;
+        outFile << "The number of games played is: " << gamesPlayed << endl;
+        outFile << "The number of games tied is: " << gamesTied << "\n" << endl;
+        outFile.close();
+
         displayBoard();
         anotherTurn();
-    }
+    }   
     else if (board[0][2] == "X" && board[1][1] == "X" && board[2][0] == "X")                                    //if the top right to bottom left diagonal of the board is filled wit X's
     {
         system("color 2");
@@ -202,8 +295,21 @@ void checkWin()                                                                 
         score += 100;
         gamesWon++;
         gamesPlayed++;
+        whoWon = "Player";
+        
+        ofstream outFile;
+        outFile.open("TTTwins.txt", ios::app);
+        outFile << whoWon << " has won this game!" << endl;
+        outFile << "The Score is: " << score << endl;
+        outFile << "The number of games won is: " << gamesWon << endl;
+        outFile << "The number of games lost is: " << gamesWon - gamesPlayed << endl;
+        outFile << "The number of games played is: " << gamesPlayed << endl;
+        outFile << "The number of games tied is: " << gamesTied << "\n" << endl;
+        outFile.close();
+
         displayBoard();
         anotherTurn();
+        
     }
     //check for horizontal wins
     else if (board[0][0] == "O" && board[0][1] == "O" && board[0][2] == "O")                                    //similar for computer's move to check win
@@ -212,8 +318,21 @@ void checkWin()                                                                 
         cout << "\n\t\tCOMPUTER WINS!" << endl;
         score -= 50;
         gamesPlayed++;
+        whoWon = "Computer";
+         
+        ofstream outFile;
+        outFile.open("TTTwins.txt", ios::app);
+        outFile << whoWon << " has won this game!" << endl;
+        outFile << "The Score is: " << score << endl;
+        outFile << "The number of games won is: " << gamesWon << endl;
+        outFile << "The number of games lost is: " << gamesWon - gamesPlayed << endl;
+        outFile << "The number of games played is: " << gamesPlayed << endl;
+        outFile << "The number of games tied is: " << gamesTied << "\n" << endl;
+        outFile.close();
+
         displayBoard();
         anotherTurn();
+        
     }
     else if (board[1][0] == "O" && board[1][1] == "O" && board[1][2] == "O")
     {
@@ -221,8 +340,21 @@ void checkWin()                                                                 
         cout << "\n\t\tCOMPUTER WINS!" << endl;
         score -= 50;
         gamesPlayed++;
+        whoWon = "Computer";
+         
+        ofstream outFile;
+        outFile.open("TTTwins.txt", ios::app);
+        outFile << whoWon << " has won this game!" << endl;
+        outFile << "The Score is: " << score << endl;
+        outFile << "The number of games won is: " << gamesWon << endl;
+        outFile << "The number of games lost is: " << gamesWon - gamesPlayed << endl;
+        outFile << "The number of games played is: " << gamesPlayed << endl;
+        outFile << "The number of games tied is: " << gamesTied << "\n" << endl;
+        outFile.close();
+
         displayBoard();
         anotherTurn();
+        
     }
     else if (board[2][0] == "O" && board[2][1] == "O" && board[2][2] == "O")
     {
@@ -230,8 +362,21 @@ void checkWin()                                                                 
         cout << "\n\t\tCOMPUTER WINS!" << endl;
         score -= 50;
         gamesPlayed++;
+        whoWon = "Computer";
+        
+        ofstream outFile;
+        outFile.open("TTTwins.txt", ios::app);
+        outFile << whoWon << " has won this game!" << endl;
+        outFile << "The Score is: " << score << endl;
+        outFile << "The number of games won is: " << gamesWon << endl;
+        outFile << "The number of games lost is: " << gamesWon - gamesPlayed << endl;
+        outFile << "The number of games played is: " << gamesPlayed << endl;
+        outFile << "The number of games tied is: " << gamesTied << "\n" << endl;
+        outFile.close();
+
         displayBoard();
         anotherTurn();
+        
     }
     //check for vertical wins
     else if (board[0][0] == "O" && board[1][0] == "O" && board[2][0] == "O")
@@ -240,8 +385,21 @@ void checkWin()                                                                 
         cout << "\n\t\tCOMPUTER WINS!" << endl;
         score -= 50;
         gamesPlayed++;
+        whoWon = "Computer";
+        
+        ofstream outFile;
+        outFile.open("TTTwins.txt", ios::app);
+        outFile << whoWon << " has won this game!" << endl;
+        outFile << "The Score is: " << score << endl;
+        outFile << "The number of games won is: " << gamesWon << endl;
+        outFile << "The number of games lost is: " << gamesWon - gamesPlayed << endl;
+        outFile << "The number of games played is: " << gamesPlayed << endl;
+        outFile << "The number of games tied is: " << gamesTied << "\n" << endl;
+        outFile.close();
+
         displayBoard();
         anotherTurn();
+        
     }
     else if (board[0][1] == "O" && board[1][1] == "O" && board[2][1] == "O")
     {
@@ -249,8 +407,21 @@ void checkWin()                                                                 
         cout << "\n\t\tCOMPUTER WINS!" << endl;
         score -= 50;
         gamesPlayed++;
+        whoWon = "Computer";
+         
+        ofstream outFile;
+        outFile.open("TTTwins.txt", ios::app);
+        outFile << whoWon << " has won this game!" << endl;
+        outFile << "The Score is: " << score << endl;
+        outFile << "The number of games won is: " << gamesWon << endl;
+        outFile << "The number of games lost is: " << gamesWon - gamesPlayed << endl;
+        outFile << "The number of games played is: " << gamesPlayed << endl;
+        outFile << "The number of games tied is: " << gamesTied << "\n" << endl;
+        outFile.close();
+
         displayBoard();
         anotherTurn();
+        
     }
     else if (board[0][2] == "O" && board[1][2] == "O" && board[2][2] == "O")
     {
@@ -258,8 +429,21 @@ void checkWin()                                                                 
         cout << "\n\t\tCOMPUTER WINS!" << endl;
         score -= 50;
         gamesPlayed++;
+        whoWon = "Computer";
+         
+        ofstream outFile;
+        outFile.open("TTTwins.txt", ios::app);
+        outFile << whoWon << " has won this game!" << endl;
+        outFile << "The Score is: " << score << endl;
+        outFile << "The number of games won is: " << gamesWon << endl;
+        outFile << "The number of games lost is: " << gamesWon - gamesPlayed << endl;
+        outFile << "The number of games played is: " << gamesPlayed << endl;
+        outFile << "The number of games tied is: " << gamesTied << "\n" << endl;
+        outFile.close();
+
         displayBoard();
         anotherTurn();
+        
     }
     //check for diagonal wins
     else if (board[0][0] == "O" && board[1][1] == "O" && board[2][2] == "O")
@@ -268,8 +452,21 @@ void checkWin()                                                                 
         cout << "\n\t\tCOMPUTER WINS!" << endl;
         score -= 50;
         gamesPlayed++;
+        whoWon = "Computer";
+        
+        ofstream outFile;
+        outFile.open("TTTwins.txt", ios::app);
+        outFile << whoWon << " has won this game!" << endl;
+        outFile << "The Score is: " << score << endl;
+        outFile << "The number of games won is: " << gamesWon << endl;
+        outFile << "The number of games lost is: " << gamesWon - gamesPlayed << endl;
+        outFile << "The number of games played is: " << gamesPlayed << endl;
+        outFile << "The number of games tied is: " << gamesTied  << "\n" << endl;
+        outFile.close();
+
         displayBoard();
         anotherTurn();
+        
     }
     else if (board[0][2] == "O" && board[1][1] == "O" && board[2][0] == "O")
     {
@@ -277,9 +474,23 @@ void checkWin()                                                                 
         cout << "\n\t\tCOMPUTER WINS!" << endl;
         score -= 50;
         gamesPlayed++;
+        whoWon = "Computer";
+         
+        ofstream outFile;
+        outFile.open("TTTwins.txt", ios::app);
+        outFile << whoWon << " has won this game!" << endl;
+        outFile << "The Score is: " << score << endl;
+        outFile << "The number of games won is: " << gamesWon << endl;
+        outFile << "The number of games lost is: " << gamesWon - gamesPlayed << endl;
+        outFile << "The number of games played is: " << gamesPlayed << endl;
+        outFile << "The number of games tied is: " << gamesTied << "\n" << endl;
+        outFile.close();
+
         displayBoard();
         anotherTurn();
+        
     }
+
 }
 
 void checkTie()                                                                                                 //function to check for a tie
@@ -294,6 +505,7 @@ void checkTie()                                                                 
                 tie = 1;                                                                                        //there is a tie
                 cout << "\n\n\t\tTIE!" << endl;                                                                 //display a message saying the game is a tie
                 gamesPlayed++;                                                                                  //increase the number of games played by 1
+                gamesTied++;                                                                                    //increase the number of games tied by 1
                 displayBoard();                                                                                 //display the board
                 anotherTurn();                                                                                  //call anotherTurn function
             }
@@ -333,6 +545,15 @@ void anotherTurn()                                                              
 
         cout << "\n\n\t\tTHANKS FOR PLAYING!" << endl;                                                          //display a message saying the game is over
         cout << "\n" << endl;
+
+        // ofstream outFile;
+        // outFile.open("TTWins.txt");
+        // outFile << whoWon << " Won This game" << endl;
+        // outFile << "Player Score: " << score << endl;
+        // outFile << "Games Won: " << gamesWon << endl;
+        // outFile << "Games Tie: " << gamesPlayed - gamesWon << endl;
+        // outFile << "Games Played: " << gamesPlayed  << "\n" << endl;
+        // outFile.close();
         
         exit(0);                                                                                                //exit the program
     }

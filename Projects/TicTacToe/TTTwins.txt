@@ -1,0 +1,14 @@
+Player has won this game!
+The Score is: 100
+The number of games won is: 1
+The number of games lost is: 0
+The number of games played is: 1
+The number of games tied is: 0
+
+Player has won this game!
+The Score is: 200
+The number of games won is: 2
+The number of games lost is: 0
+The number of games played is: 2
+The number of games tied is: 0
+
