@@ -40,6 +40,10 @@ int gamesPlayed = 0;
 int gamesWon = 0;
 int gamesTied = 0;
 
+time_t now = time(0);                                                                                       //time_t is a type defined in time.h
+tm *ltm = localtime(&now);                                                                                  //tm is a type defined in time.h
+string currentTime = asctime(ltm);                                                                          //asctime is a function defined in time.h
+ 
 
 int protectData(string prompt)                                                                                  //function to protect the data entered by the user
 {
@@ -137,12 +141,14 @@ void checkWin()                                                                 
         
         ofstream outFile;                                                                                       //create an output file stream
         outFile.open("TTTwins.txt", ios::app);                                                                  //open the output file stream
+        outFile << "Game Played on " << currentTime << endl;                                                    //write the current time to the output file
+        outFile << "Game Number: " << gamesPlayed << endl;                                                      //write the game number to the output file
         outFile << whoWon << " has won this game!" << endl;                                                     //write the name of the player who won the game to the output file
         outFile << "The Score is: " << score << endl;                                                           //write the score to the output file
         outFile << "The number of games won is: " << gamesWon << endl;                                          //write the number of games won to the output file
         outFile << "The number of games lost is: " << gamesWon - gamesPlayed << endl;                           //write the number of games lost to the output file
         outFile << "The number of games played is: " << gamesPlayed << endl;                                    //write the number of games played to the output file
-        outFile << "The number of games tied is: " << gamesTied << "\n" << endl;                                //write the number of games tied to the output file
+        outFile << "The number of games tied is: " << gamesTied << endl;                                //write the number of games tied to the output file
         outFile << "This was a Horizontal Win by " << whoWon << "!\n" << endl;
         outFile.close();                                                                                        //close the output file stream                          
 
@@ -160,13 +166,15 @@ void checkWin()                                                                 
         whoWon = "Player";                                                                                      //set whoWon to "Player"
         
         ofstream outFile;                                                                                       //create an output file stream
-        outFile.open("TTTwins.txt", ios::app);                                                                  //open the output file stream                                         
+        outFile.open("TTTwins.txt", ios::app);                                                                  //open the output file stream
+        outFile << "Game Played on " << currentTime << endl;                                                    //write the current time to the output file
+        outFile << "Game Number: " << gamesPlayed << endl;                                                      //write the game number to the output file                                         
         outFile << whoWon << " has won this game!" << endl;                                                     //write the name of the player who won the game to the output file
         outFile << "The Score is: " << score << endl;                                                           //write the score to the output file
         outFile << "The number of games won is: " << gamesWon << endl;                                          //write the number of games won to the output file
         outFile << "The number of games lost is: " << gamesWon - gamesPlayed << endl;                           //write the number of games lost to the output file
         outFile << "The number of games played is: " << gamesPlayed << endl;                                    //write the number of games played to the output file
-        outFile << "The number of games tied is: " << gamesTied << "\n" << endl;                                //write the number of games tied to the output file
+        outFile << "The number of games tied is: " << gamesTied << endl;                                //write the number of games tied to the output file
         outFile << "This was a Horizontal Win by " << whoWon << "!\n" << endl;
         outFile.close();                                                                                        //close the output file stream
 
@@ -185,12 +193,14 @@ void checkWin()                                                                 
          
         ofstream outFile;
         outFile.open("TTTwins.txt", ios::app);
+        outFile << "Game Played on " << currentTime << endl;                                                   
+        outFile << "Game Number: " << gamesPlayed << endl;
         outFile << whoWon << " has won this game!" << endl;
         outFile << "The Score is: " << score << endl;
         outFile << "The number of games won is: " << gamesWon << endl;
         outFile << "The number of games lost is: " << gamesWon - gamesPlayed << endl;
         outFile << "The number of games played is: " << gamesPlayed << endl;
-        outFile << "The number of games tied is: " << gamesTied << "\n" << endl;
+        outFile << "The number of games tied is: " << gamesTied << endl;
         outFile << "This was a Horizontal Win by " << whoWon << "!\n" << endl;                      
         outFile.close();
 
@@ -210,12 +220,14 @@ void checkWin()                                                                 
          
         ofstream outFile;
         outFile.open("TTTwins.txt", ios::app);
+        outFile << "Game Played on " << currentTime << endl;                                                   
+        outFile << "Game Number: " << gamesPlayed << endl;
         outFile << whoWon << " has won this game!" << endl;
         outFile << "The Score is: " << score << endl;
         outFile << "The number of games won is: " << gamesWon << endl;
         outFile << "The number of games lost is: " << gamesWon - gamesPlayed << endl;
         outFile << "The number of games played is: " << gamesPlayed << endl;
-        outFile << "The number of games tied is: " << gamesTied << "\n" << endl;
+        outFile << "The number of games tied is: " << gamesTied << endl;
         outFile << "This was a Vertical Win by " << whoWon << "!\n" << endl;   
         outFile.close();
 
@@ -234,12 +246,14 @@ void checkWin()                                                                 
          
         ofstream outFile;
         outFile.open("TTTwins.txt", ios::app);
+        outFile << "Game Played on " << currentTime << endl;                                                    
+        outFile << "Game Number: " << gamesPlayed << endl;
         outFile << whoWon << " has won this game!" << endl;
         outFile << "The Score is: " << score << endl;
         outFile << "The number of games won is: " << gamesWon << endl;
         outFile << "The number of games lost is: " << gamesWon - gamesPlayed << endl;
         outFile << "The number of games played is: " << gamesPlayed << endl;
-        outFile << "The number of games tied is: " << gamesTied << "\n" << endl;
+        outFile << "The number of games tied is: " << gamesTied << endl;
         outFile << "This was a Vertical Win by " << whoWon << "!\n" << endl;
         outFile.close();
 
@@ -258,12 +272,14 @@ void checkWin()                                                                 
          
         ofstream outFile;
         outFile.open("TTTwins.txt", ios::app);
+        outFile << "Game Played on " << currentTime << endl;
+        outFile << "Game Number: " << gamesPlayed << endl;
         outFile << whoWon << " has won this game!" << endl;
         outFile << "The Score is: " << score << endl;
         outFile << "The number of games won is: " << gamesWon << endl;
         outFile << "The number of games lost is: " << gamesWon - gamesPlayed << endl;
         outFile << "The number of games played is: " << gamesPlayed << endl;
-        outFile << "The number of games tied is: " << gamesTied << "\n" << endl;
+        outFile << "The number of games tied is: " << gamesTied << endl;
         outFile << "This was a Vertical Win by " << whoWon << "!\n" << endl;
         outFile.close();
 
@@ -283,12 +299,14 @@ void checkWin()                                                                 
          
         ofstream outFile;
         outFile.open("TTTwins.txt", ios::app);
+        outFile << "Game Played on " << currentTime << endl;
+        outFile << "Game Number: " << gamesPlayed << endl;
         outFile << whoWon << " has won this game!" << endl;
         outFile << "The Score is: " << score << endl;
         outFile << "The number of games won is: " << gamesWon << endl;
         outFile << "The number of games lost is: " << gamesWon - gamesPlayed << endl;
         outFile << "The number of games played is: " << gamesPlayed << endl;
-        outFile << "The number of games tied is: " << gamesTied << "\n" << endl;
+        outFile << "The number of games tied is: " << gamesTied << endl;
         outFile << "This was a Diagonal Win by " << whoWon << "!\n" << endl;
         outFile.close();
 
@@ -306,12 +324,14 @@ void checkWin()                                                                 
         
         ofstream outFile;
         outFile.open("TTTwins.txt", ios::app);
+        outFile << "Game Played on " << currentTime << endl;
+        outFile << "Game Number: " << gamesPlayed << endl;
         outFile << whoWon << " has won this game!" << endl;
         outFile << "The Score is: " << score << endl;
         outFile << "The number of games won is: " << gamesWon << endl;
         outFile << "The number of games lost is: " << gamesWon - gamesPlayed << endl;
         outFile << "The number of games played is: " << gamesPlayed << endl;
-        outFile << "The number of games tied is: " << gamesTied << "\n" << endl;
+        outFile << "The number of games tied is: " << gamesTied << endl;
         outFile << "This was a Diagonal Win by " << whoWon << "!\n" << endl;
         outFile.close();
 
@@ -330,12 +350,14 @@ void checkWin()                                                                 
          
         ofstream outFile;
         outFile.open("TTTwins.txt", ios::app);
+        outFile << "Game Played on " << currentTime << endl;
+        outFile << "Game Number: " << gamesPlayed << endl;
         outFile << whoWon << " has won this game!" << endl;
         outFile << "The Score is: " << score << endl;
         outFile << "The number of games won is: " << gamesWon << endl;
         outFile << "The number of games lost is: " << gamesWon - gamesPlayed << endl;
         outFile << "The number of games played is: " << gamesPlayed << endl;
-        outFile << "The number of games tied is: " << gamesTied << "\n" << endl;
+        outFile << "The number of games tied is: " << gamesTied << endl;
         outFile << "This was a Horizontal Win by " << whoWon << "!\n" << endl;
         outFile.close();
 
@@ -353,12 +375,14 @@ void checkWin()                                                                 
          
         ofstream outFile;
         outFile.open("TTTwins.txt", ios::app);
+        outFile << "Game Played on " << currentTime << endl;
+        outFile << "Game Number: " << gamesPlayed << endl;
         outFile << whoWon << " has won this game!" << endl;
         outFile << "The Score is: " << score << endl;
         outFile << "The number of games won is: " << gamesWon << endl;
         outFile << "The number of games lost is: " << gamesWon - gamesPlayed << endl;
         outFile << "The number of games played is: " << gamesPlayed << endl;
-        outFile << "The number of games tied is: " << gamesTied << "\n" << endl;
+        outFile << "The number of games tied is: " << gamesTied << endl;
         outFile << "This was a Horizontal Win by " << whoWon << "!\n" << endl;
         outFile.close();
 
@@ -376,12 +400,14 @@ void checkWin()                                                                 
         
         ofstream outFile;
         outFile.open("TTTwins.txt", ios::app);
+        outFile << "Game Played on " << currentTime << endl;
+        outFile << "Game Number: " << gamesPlayed << endl;
         outFile << whoWon << " has won this game!" << endl;
         outFile << "The Score is: " << score << endl;
         outFile << "The number of games won is: " << gamesWon << endl;
         outFile << "The number of games lost is: " << gamesWon - gamesPlayed << endl;
         outFile << "The number of games played is: " << gamesPlayed << endl;
-        outFile << "The number of games tied is: " << gamesTied << "\n" << endl;
+        outFile << "The number of games tied is: " << gamesTied << endl;
         outFile << "This was a Horizontal Win by " << whoWon << "!\n" << endl;
         outFile.close();
 
@@ -400,12 +426,14 @@ void checkWin()                                                                 
         
         ofstream outFile;
         outFile.open("TTTwins.txt", ios::app);
+        outFile << "Game Played on " << currentTime << endl;
+        outFile << "Game Number: " << gamesPlayed << endl;
         outFile << whoWon << " has won this game!" << endl;
         outFile << "The Score is: " << score << endl;
         outFile << "The number of games won is: " << gamesWon << endl;
         outFile << "The number of games lost is: " << gamesWon - gamesPlayed << endl;
         outFile << "The number of games played is: " << gamesPlayed << endl;
-        outFile << "The number of games tied is: " << gamesTied << "\n" << endl;
+        outFile << "The number of games tied is: " << gamesTied << endl;
         outFile << "This was a Vertical Win by " << whoWon << "!\n" << endl;
         outFile.close();
 
@@ -423,12 +451,14 @@ void checkWin()                                                                 
          
         ofstream outFile;
         outFile.open("TTTwins.txt", ios::app);
+        outFile << "Game Played on " << currentTime << endl;
+        outFile << "Game Number: " << gamesPlayed << endl;
         outFile << whoWon << " has won this game!" << endl;
         outFile << "The Score is: " << score << endl;
         outFile << "The number of games won is: " << gamesWon << endl;
         outFile << "The number of games lost is: " << gamesWon - gamesPlayed << endl;
         outFile << "The number of games played is: " << gamesPlayed << endl;
-        outFile << "The number of games tied is: " << gamesTied << "\n" << endl;
+        outFile << "The number of games tied is: " << gamesTied << endl;
         outFile << "This was a Vertical Win by " << whoWon << "!\n" << endl;
         outFile.close();
 
@@ -446,12 +476,14 @@ void checkWin()                                                                 
          
         ofstream outFile;
         outFile.open("TTTwins.txt", ios::app);
+        outFile << "Game Played on " << currentTime << endl;
+        outFile << "Game Number: " << gamesPlayed << endl;
         outFile << whoWon << " has won this game!" << endl;
         outFile << "The Score is: " << score << endl;
         outFile << "The number of games won is: " << gamesWon << endl;
         outFile << "The number of games lost is: " << gamesWon - gamesPlayed << endl;
         outFile << "The number of games played is: " << gamesPlayed << endl;
-        outFile << "The number of games tied is: " << gamesTied << "\n" << endl;
+        outFile << "The number of games tied is: " << gamesTied << endl;
         outFile << "This was a Vertical Win by " << whoWon << "!\n" << endl;
         outFile.close();
 
@@ -470,12 +502,14 @@ void checkWin()                                                                 
         
         ofstream outFile;
         outFile.open("TTTwins.txt", ios::app);
+        outFile << "Game Played on " << currentTime << endl;
+        outFile << "Game Number: " << gamesPlayed << endl;
         outFile << whoWon << " has won this game!" << endl;
         outFile << "The Score is: " << score << endl;
         outFile << "The number of games won is: " << gamesWon << endl;
         outFile << "The number of games lost is: " << gamesWon - gamesPlayed << endl;
         outFile << "The number of games played is: " << gamesPlayed << endl;
-        outFile << "The number of games tied is: " << gamesTied  << "\n" << endl;
+        outFile << "The number of games tied is: " << gamesTied << endl;
         outFile << "This was a Diagonal Win by " << whoWon << "!\n" << endl;
         outFile.close();
 
@@ -493,12 +527,14 @@ void checkWin()                                                                 
          
         ofstream outFile;
         outFile.open("TTTwins.txt", ios::app);
+        outFile << "Game Played on " << currentTime << endl;
+        outFile << "Game Number: " << gamesPlayed << endl;
         outFile << whoWon << " has won this game!" << endl;
         outFile << "The Score is: " << score << endl;
         outFile << "The number of games won is: " << gamesWon << endl;
         outFile << "The number of games lost is: " << gamesWon - gamesPlayed << endl;
         outFile << "The number of games played is: " << gamesPlayed << endl;
-        outFile << "The number of games tied is: " << gamesTied << "\n" << endl;
+        outFile << "The number of games tied is: " << gamesTied << endl;
         outFile << "This was a Diagonal Win by " << whoWon << "!\n" << endl;
         outFile.close();
 
