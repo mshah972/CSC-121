@@ -143,6 +143,7 @@ void checkWin()                                                                 
         outFile << "The number of games lost is: " << gamesWon - gamesPlayed << endl;                           //write the number of games lost to the output file
         outFile << "The number of games played is: " << gamesPlayed << endl;                                    //write the number of games played to the output file
         outFile << "The number of games tied is: " << gamesTied << "\n" << endl;                                //write the number of games tied to the output file
+        outFile << "This was a Horizontal Win by " << whoWon << "!\n" << endl;
         outFile.close();                                                                                        //close the output file stream                          
 
         displayBoard();                                                                                         //display the board
@@ -166,6 +167,7 @@ void checkWin()                                                                 
         outFile << "The number of games lost is: " << gamesWon - gamesPlayed << endl;                           //write the number of games lost to the output file
         outFile << "The number of games played is: " << gamesPlayed << endl;                                    //write the number of games played to the output file
         outFile << "The number of games tied is: " << gamesTied << "\n" << endl;                                //write the number of games tied to the output file
+        outFile << "This was a Horizontal Win by " << whoWon << "!\n" << endl;
         outFile.close();                                                                                        //close the output file stream
 
         displayBoard();                                                                                         //display the board
@@ -188,7 +190,8 @@ void checkWin()                                                                 
         outFile << "The number of games won is: " << gamesWon << endl;
         outFile << "The number of games lost is: " << gamesWon - gamesPlayed << endl;
         outFile << "The number of games played is: " << gamesPlayed << endl;
-        outFile << "The number of games tied is: " << gamesTied << "\n" << endl;                      
+        outFile << "The number of games tied is: " << gamesTied << "\n" << endl;
+        outFile << "This was a Horizontal Win by " << whoWon << "!\n" << endl;                      
         outFile.close();
 
         displayBoard();                                                                                         //display the board
@@ -212,7 +215,8 @@ void checkWin()                                                                 
         outFile << "The number of games won is: " << gamesWon << endl;
         outFile << "The number of games lost is: " << gamesWon - gamesPlayed << endl;
         outFile << "The number of games played is: " << gamesPlayed << endl;
-        outFile << "The number of games tied is: " << gamesTied << "\n" << endl;        
+        outFile << "The number of games tied is: " << gamesTied << "\n" << endl;
+        outFile << "This was a Vertical Win by " << whoWon << "!\n" << endl;   
         outFile.close();
 
         displayBoard();                                                                                         //display the board
@@ -236,6 +240,7 @@ void checkWin()                                                                 
         outFile << "The number of games lost is: " << gamesWon - gamesPlayed << endl;
         outFile << "The number of games played is: " << gamesPlayed << endl;
         outFile << "The number of games tied is: " << gamesTied << "\n" << endl;
+        outFile << "This was a Vertical Win by " << whoWon << "!\n" << endl;
         outFile.close();
 
         displayBoard();                                                                                         //display the board
@@ -259,6 +264,7 @@ void checkWin()                                                                 
         outFile << "The number of games lost is: " << gamesWon - gamesPlayed << endl;
         outFile << "The number of games played is: " << gamesPlayed << endl;
         outFile << "The number of games tied is: " << gamesTied << "\n" << endl;
+        outFile << "This was a Vertical Win by " << whoWon << "!\n" << endl;
         outFile.close();
 
         displayBoard();                                                                                         //display the board
@@ -283,6 +289,7 @@ void checkWin()                                                                 
         outFile << "The number of games lost is: " << gamesWon - gamesPlayed << endl;
         outFile << "The number of games played is: " << gamesPlayed << endl;
         outFile << "The number of games tied is: " << gamesTied << "\n" << endl;
+        outFile << "This was a Diagonal Win by " << whoWon << "!\n" << endl;
         outFile.close();
 
         displayBoard();
@@ -305,6 +312,7 @@ void checkWin()                                                                 
         outFile << "The number of games lost is: " << gamesWon - gamesPlayed << endl;
         outFile << "The number of games played is: " << gamesPlayed << endl;
         outFile << "The number of games tied is: " << gamesTied << "\n" << endl;
+        outFile << "This was a Diagonal Win by " << whoWon << "!\n" << endl;
         outFile.close();
 
         displayBoard();
@@ -328,6 +336,7 @@ void checkWin()                                                                 
         outFile << "The number of games lost is: " << gamesWon - gamesPlayed << endl;
         outFile << "The number of games played is: " << gamesPlayed << endl;
         outFile << "The number of games tied is: " << gamesTied << "\n" << endl;
+        outFile << "This was a Horizontal Win by " << whoWon << "!\n" << endl;
         outFile.close();
 
         displayBoard();
@@ -350,6 +359,7 @@ void checkWin()                                                                 
         outFile << "The number of games lost is: " << gamesWon - gamesPlayed << endl;
         outFile << "The number of games played is: " << gamesPlayed << endl;
         outFile << "The number of games tied is: " << gamesTied << "\n" << endl;
+        outFile << "This was a Horizontal Win by " << whoWon << "!\n" << endl;
         outFile.close();
 
         displayBoard();
@@ -372,6 +382,7 @@ void checkWin()                                                                 
         outFile << "The number of games lost is: " << gamesWon - gamesPlayed << endl;
         outFile << "The number of games played is: " << gamesPlayed << endl;
         outFile << "The number of games tied is: " << gamesTied << "\n" << endl;
+        outFile << "This was a Horizontal Win by " << whoWon << "!\n" << endl;
         outFile.close();
 
         displayBoard();
@@ -395,6 +406,7 @@ void checkWin()                                                                 
         outFile << "The number of games lost is: " << gamesWon - gamesPlayed << endl;
         outFile << "The number of games played is: " << gamesPlayed << endl;
         outFile << "The number of games tied is: " << gamesTied << "\n" << endl;
+        outFile << "This was a Vertical Win by " << whoWon << "!\n" << endl;
         outFile.close();
 
         displayBoard();
@@ -417,6 +429,7 @@ void checkWin()                                                                 
         outFile << "The number of games lost is: " << gamesWon - gamesPlayed << endl;
         outFile << "The number of games played is: " << gamesPlayed << endl;
         outFile << "The number of games tied is: " << gamesTied << "\n" << endl;
+        outFile << "This was a Vertical Win by " << whoWon << "!\n" << endl;
         outFile.close();
 
         displayBoard();
@@ -439,6 +452,7 @@ void checkWin()                                                                 
         outFile << "The number of games lost is: " << gamesWon - gamesPlayed << endl;
         outFile << "The number of games played is: " << gamesPlayed << endl;
         outFile << "The number of games tied is: " << gamesTied << "\n" << endl;
+        outFile << "This was a Vertical Win by " << whoWon << "!\n" << endl;
         outFile.close();
 
         displayBoard();
@@ -462,6 +476,7 @@ void checkWin()                                                                 
         outFile << "The number of games lost is: " << gamesWon - gamesPlayed << endl;
         outFile << "The number of games played is: " << gamesPlayed << endl;
         outFile << "The number of games tied is: " << gamesTied  << "\n" << endl;
+        outFile << "This was a Diagonal Win by " << whoWon << "!\n" << endl;
         outFile.close();
 
         displayBoard();
@@ -484,6 +499,7 @@ void checkWin()                                                                 
         outFile << "The number of games lost is: " << gamesWon - gamesPlayed << endl;
         outFile << "The number of games played is: " << gamesPlayed << endl;
         outFile << "The number of games tied is: " << gamesTied << "\n" << endl;
+        outFile << "This was a Diagonal Win by " << whoWon << "!\n" << endl;
         outFile.close();
 
         displayBoard();
