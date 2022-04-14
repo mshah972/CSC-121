@@ -148,7 +148,7 @@ void checkWin()                                                                 
         outFile << "The number of games won is: " << gamesWon << endl;                                          //write the number of games won to the output file
         outFile << "The number of games lost is: " << gamesWon - gamesPlayed << endl;                           //write the number of games lost to the output file
         outFile << "The number of games played is: " << gamesPlayed << endl;                                    //write the number of games played to the output file
-        outFile << "The number of games tied is: " << gamesTied << endl;                                //write the number of games tied to the output file
+        outFile << "The number of games tied is: " << gamesTied << endl;                                        //write the number of games tied to the output file
         outFile << "This was a Horizontal Win by " << whoWon << "!\n" << endl;
         outFile.close();                                                                                        //close the output file stream                          
 
@@ -174,7 +174,7 @@ void checkWin()                                                                 
         outFile << "The number of games won is: " << gamesWon << endl;                                          //write the number of games won to the output file
         outFile << "The number of games lost is: " << gamesWon - gamesPlayed << endl;                           //write the number of games lost to the output file
         outFile << "The number of games played is: " << gamesPlayed << endl;                                    //write the number of games played to the output file
-        outFile << "The number of games tied is: " << gamesTied << endl;                                //write the number of games tied to the output file
+        outFile << "The number of games tied is: " << gamesTied << endl;                                        //write the number of games tied to the output file
         outFile << "This was a Horizontal Win by " << whoWon << "!\n" << endl;
         outFile.close();                                                                                        //close the output file stream
 
