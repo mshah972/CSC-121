@@ -20,8 +20,8 @@ int main()
 
     Sleep(500);                                                                                                     // pause for 500 milliseconds
     
-    cout << "\nData from getFavSport() method before any changes: " << w12q3.getFavSport() << endl;                 // display data from getFavSport() method before any changes          
-    cout << "Data from getFavTeam() method before any changes: " << w12q3.getFavTeam() << endl;                     // display data from getFavTeam() method before any changes
+    cout << "\nYour favorite sport before any changes: " << w12q3.getFavSport() << endl;                            // display data from getFavSport() method before any changes          
+    cout << "Your favorite team from that sport before any changes: " << w12q3.getFavTeam() << endl;                // display data from getFavTeam() method before any changes
 
     Sleep(500);                                                                                                     // pause for 500 milliseconds
 
@@ -37,8 +37,8 @@ int main()
     w12q3.setFavTeam("Team USA");                                                                                   // call method setFavTeam
 
     cout << endl;
-    cout << "\nData from getFavSport() method after changes: " << w12q3.getFavSport() << endl;                      // display data from getFavSport() method after changes
-    cout << "Data from getFavTeam() method after changes: " << w12q3.getFavTeam() << endl;                          // display data from getFavTeam() method after changes
+    cout << "\nYour favorite sport after changes: " << w12q3.getFavSport() << endl;                                 // display data from getFavSport() method after changes
+    cout << "Your favorite team from that sport after changes: " << w12q3.getFavTeam() << endl;                     // display data from getFavTeam() method after changes
 
     cout << endl;
 
