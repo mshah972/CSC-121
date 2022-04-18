@@ -5,17 +5,15 @@
       "name": "C/C++ Runner: Debug Session",
       "type": "cppdbg",
       "request": "launch",
-      "args": [
-        ""
-      ],
+      "args": [],
       "stopAtEntry": false,
-      "cwd": "d:/Harper Classes/CSC-121/CSC 121/Exams",
+      "cwd": "d:/Harper Classes/CSC-121/CSC 121/Labs",
       "environment": [],
-      "program": "d:/Harper Classes/CSC-121/CSC 121/Exams/build/Debug/outDebug",
+      "program": "d:/Harper Classes/CSC-121/CSC 121/Labs/build/Debug/outDebug",
       "internalConsoleOptions": "openOnSessionStart",
       "MIMode": "gdb",
       "miDebuggerPath": "C:/MinGW/bin/gdb.exe",
-      "externalConsole": false,
+      "console": "integratedTerminal",
       "setupCommands": [
         {
           "description": "Enable pretty-printing for gdb",
