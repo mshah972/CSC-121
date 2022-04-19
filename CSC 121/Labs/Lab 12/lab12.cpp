@@ -16,6 +16,7 @@ int main()
 {
     uml umlClass;                                                                                           // create umlClass object
 
+
     char quit = 'y';                                                                                        // char variable quit
     int choice;                                                                                             // int variable choice
     int deposit;                                                                                            // int variable deposit                     
@@ -45,6 +46,9 @@ int main()
     
     if(userNumber == accountNumber)
     {
+        
+        uml uAccount(umlClass.name, umlClass.getBalance());                                                 // create Account object with name and balance
+        
         while(quit == 'y')                                                                                  // while loop if user wants to access account                                                   
         {
             system("cls");                                                                                      // clear screen             

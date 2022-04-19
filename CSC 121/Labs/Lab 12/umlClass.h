@@ -13,6 +13,19 @@ using namespace std;
 class uml {                                                                             // class uml                  
     
     public:                                                                             // public access specifier             
+        
+        uml()                                                                       // default constructor
+        {
+            name = "";
+            balance = 0;
+        }
+        
+        uml(string uName, double uBalance)                                                 // Constructor with parameters
+        {
+            name = uName;
+            balance = uBalance;
+        }
+        
         string name;                                                                    // string variable name         
 
     void setDeposit(int amount){                                                        // void method setDeposit           
