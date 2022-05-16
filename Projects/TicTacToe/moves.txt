@@ -1,0 +1,366 @@
+
+***********NEXT MOVE***********
+Player 1 has chosen number: 5
+Player 2 has chosen number: 0
+****************************************
+
+
+***********NEXT MOVE***********
+Player 1 has chosen number: 5
+Player 2 has chosen number: 3
+****************************************
+
+
+***********NEXT MOVE***********
+Player 1 has chosen number: 9
+Player 2 has chosen number: 3
+****************************************
+
+
+***********NEXT MOVE***********
+Player 1 has chosen number: 9
+Player 2 has chosen number: 1
+****************************************
+
+
+***********NEXT MOVE***********
+Player 1 has chosen number: 2
+Player 2 has chosen number: 1
+****************************************
+
+
+***********NEXT MOVE***********
+Player 1 has chosen number: 2
+Player 2 has chosen number: 8
+****************************************
+
+
+***********NEXT MOVE***********
+Player 1 has chosen number: 7
+Player 2 has chosen number: 8
+****************************************
+
+
+***********NEXT MOVE***********
+Player 1 has chosen number: 7
+Player 2 has chosen number: 4
+****************************************
+
+
+***********NEXT MOVE***********
+Player 1 has chosen number: 6
+Player 2 has chosen number: 4
+****************************************
+
+
+**************NEXT MOVE*****************
+Player has chosen number: 5
+Computer has chosen number: 0
+****************************************
+
+
+**************NEXT MOVE*****************
+Player has chosen number: 5
+Computer has chosen number: 9
+****************************************
+
+
+**************NEXT MOVE*****************
+Player has chosen number: 3
+Computer has chosen number: 9
+****************************************
+
+
+**************NEXT MOVE*****************
+Player has chosen number: 3
+Computer has chosen number: 7
+****************************************
+
+
+**************NEXT MOVE*****************
+Player has chosen number: 8
+Computer has chosen number: 7
+****************************************
+
+
+**************NEXT MOVE*****************
+Player has chosen number: 8
+Computer has chosen number: 5
+****************************************
+
+
+**************NEXT MOVE*****************
+Player has chosen number: 8
+Computer has chosen number: 5
+****************************************
+
+
+**************NEXT MOVE*****************
+Player has chosen number: 8
+Computer has chosen number: 3
+****************************************
+
+
+**************NEXT MOVE*****************
+Player has chosen number: 8
+Computer has chosen number: 1
+****************************************
+
+
+**************NEXT MOVE*****************
+Player has chosen number: 2
+Computer has chosen number: 1
+****************************************
+
+
+**************NEXT MOVE*****************
+Player 1 has chosen number: 1
+Player 2 has chosen number: 0
+****************************************
+
+
+**************NEXT MOVE*****************
+Player 1 has chosen number: 1
+Player 2 has chosen number: 5
+****************************************
+
+
+**************NEXT MOVE*****************
+Player 1 has chosen number: 2
+Player 2 has chosen number: 5
+****************************************
+
+
+**************NEXT MOVE*****************
+Player 1 has chosen number: 2
+Player 2 has chosen number: 6
+****************************************
+
+
+**************NEXT MOVE*****************
+Player 1 has chosen number: 3
+Player 2 has chosen number: 6
+****************************************
+
+
+**************NEXT MOVE*****************
+Player 1 has chosen number: 3
+Player 2 has chosen number: 8
+****************************************
+
+
+**************NEXT MOVE*****************
+Player 1 has chosen number: 5
+Player 2 has chosen number: 8
+****************************************
+
+
+**************NEXT MOVE*****************
+Player 1 has chosen number: 5
+Player 2 has chosen number: 9
+****************************************
+
+
+**************NEXT MOVE*****************
+Player 1 has chosen number: 7
+Player 2 has chosen number: 9
+****************************************
+
+
+**************NEXT MOVE*****************
+Player 1 has chosen number: 7
+Player 2 has chosen number: 6
+****************************************
+
+
+**************NEXT MOVE*****************
+Player 1 has chosen number: 3
+Player 2 has chosen number: 6
+****************************************
+
+
+**************NEXT MOVE*****************
+Player 1 has chosen number: 3
+Player 2 has chosen number: 5
+****************************************
+
+
+**************NEXT MOVE*****************
+Player 1 has chosen number: 9
+Player 2 has chosen number: 5
+****************************************
+
+
+**************NEXT MOVE*****************
+Player 1 has chosen number: 9
+Player 2 has chosen number: 2
+****************************************
+
+
+**************NEXT MOVE*****************
+Player 1 has chosen number: 7
+Player 2 has chosen number: 2
+****************************************
+
+
+**************NEXT MOVE*****************
+Player 1 has chosen number: 7
+Player 2 has chosen number: 8
+****************************************
+
+
+**************NEXT MOVE*****************
+Player 1 has chosen number: 9
+Player 2 has chosen number: 8
+****************************************
+
+
+**************NEXT MOVE*****************
+Player 1 has chosen number: 9
+Player 2 has chosen number: 1
+****************************************
+
+
+**************NEXT MOVE*****************
+Player 1 has chosen number: 8
+Player 2 has chosen number: 0
+****************************************
+
+
+**************NEXT MOVE*****************
+Player 1 has chosen number: 8
+Player 2 has chosen number: 1
+****************************************
+
+
+**************NEXT MOVE*****************
+Player 1 has chosen number: 7
+Player 2 has chosen number: 1
+****************************************
+
+
+**************NEXT MOVE*****************
+Player 1 has chosen number: 7
+Player 2 has chosen number: 9
+****************************************
+
+
+**************NEXT MOVE*****************
+Player 1 has chosen number: 4
+Player 2 has chosen number: 9
+****************************************
+
+
+**************NEXT MOVE*****************
+Player 1 has chosen number: 4
+Player 2 has chosen number: 5
+****************************************
+
+
+**************NEXT MOVE*****************
+Player 1 has chosen number: 1
+Player 2 has chosen number: 5
+****************************************
+
+
+**************NEXT MOVE*****************
+Player 1 has chosen number: 1
+Player 2 has chosen number: 5
+****************************************
+
+
+**************NEXT MOVE*****************
+Player 1 has chosen number: 4
+Player 2 has chosen number: 5
+****************************************
+
+
+**************NEXT MOVE*****************
+Player 1 has chosen number: 1
+Player 2 has chosen number: 0
+****************************************
+
+
+**************NEXT MOVE*****************
+Player 1 has chosen number: 1
+Player 2 has chosen number: 4
+****************************************
+
+
+**************NEXT MOVE*****************
+Player 1 has chosen number: 2
+Player 2 has chosen number: 4
+****************************************
+
+
+**************NEXT MOVE*****************
+Player 1 has chosen number: 2
+Player 2 has chosen number: 5
+****************************************
+
+
+**************NEXT MOVE*****************
+Player 1 has chosen number: 9
+Player 2 has chosen number: 5
+****************************************
+
+
+**************NEXT MOVE*****************
+Player 1 has chosen number: 9
+Player 2 has chosen number: 6
+****************************************
+
+
+**************NEXT MOVE*****************
+Player 1 has chosen number: 5
+Player 2 has chosen number: 6
+****************************************
+
+
+**************NEXT MOVE*****************
+Player 1 has chosen number: 5
+Player 2 has chosen number: 3
+****************************************
+
+
+**************NEXT MOVE*****************
+Player 1 has chosen number: 9
+Player 2 has chosen number: 3
+****************************************
+
+
+**************NEXT MOVE*****************
+Player 1 has chosen number: 9
+Player 2 has chosen number: 1
+****************************************
+
+
+**************NEXT MOVE*****************
+Player 1 has chosen number: 2
+Player 2 has chosen number: 1
+****************************************
+
+
+**************NEXT MOVE*****************
+Player 1 has chosen number: 2
+Player 2 has chosen number: 8
+****************************************
+
+
+**************NEXT MOVE*****************
+Player 1 has chosen number: 4
+Player 2 has chosen number: 8
+****************************************
+
+
+**************NEXT MOVE*****************
+Player 1 has chosen number: 4
+Player 2 has chosen number: 6
+****************************************
+
+
+**************NEXT MOVE*****************
+Player 1 has chosen number: 7
+Player 2 has chosen number: 6
+****************************************
+

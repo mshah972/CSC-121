@@ -1,4 +1,20 @@
-Game Played on Tue Apr 12 16:30:29 2022
+Game Played on Sun May 15 22:07:31 2022
+
+Game Number: 1
+
+
+		TIE! has won this game!
+The Score is: 0
+The number of games won is: 0
+The number of games lost is: 18446744073709551615
+The number of games played is: 1
+The number of games tied is: 1
+
+This was a Tie between Player and Computer!!
+
+		TIE!!
+
+Game Played on Mon May 16 11:45:04 2022
 
 Game Number: 1
 Player has won this game!
@@ -7,20 +23,9 @@ The number of games won is: 1
 The number of games lost is: 0
 The number of games played is: 1
 The number of games tied is: 0
-This was a Diagonal Win by Player!
+This was a Second Column Vertical Win by Player!
 
-Game Played on Tue Apr 12 16:34:11 2022
-
-Game Number: 1
-Player has won this game!
-The Score is: 100
-The number of games won is: 1
-The number of games lost is: 0
-The number of games played is: 1
-The number of games tied is: 0
-This was a Diagonal Win by Player!
-
-Game Played on Thu Apr 14 13:50:08 2022
+Game Played on Mon May 16 11:46:33 2022
 
 Game Number: 1
 Player has won this game!
@@ -29,16 +34,65 @@ The number of games won is: 1
 The number of games lost is: 0
 The number of games played is: 1
 The number of games tied is: 0
-This was a Horizontal Win by Player!
+This was a First Row Horizontal Win by Player!
 
-Game Played on Mon Apr 25 20:42:18 2022
+Game Played on Mon May 16 11:46:33 2022
+
+Game Number: 2
+Player has won this game!
+The Score is: 200
+The number of games won is: 2
+The number of games lost is: 0
+The number of games played is: 2
+The number of games tied is: 0
+This was a Top Right to Bottom Left Diagonal Win by Player!
+
+Game Played on Mon May 16 11:46:33 2022
+
+Game Number: 3
+Computer has won this game!
+The Score is: 150
+The number of games won is: 3
+The number of games lost is: 0
+The number of games played is: 3
+The number of games tied is: 0
+This was a Second Column Vertical Win by Computer!
+
+Game Played on Mon May 16 11:50:12 2022
 
 Game Number: 1
-Player has won this game!
-The Score is: 100
+Computer has won this game!
+The Score is: -50
 The number of games won is: 1
 The number of games lost is: 0
 The number of games played is: 1
 The number of games tied is: 0
-This was a Diagonal Win by Player!
+This was a Top Left to Bottom Right Diagonal WinComputer!
+
+Game Played on Mon May 16 11:52:43 2022
+
+Game Number: 1
+Computer has won this game!
+The Score is: -50
+The number of games won is: 1
+The number of games lost is: 0
+The number of games played is: 1
+The number of games tied is: 0
+This was a Second Row Horizontal Win by Computer!
+
+Game Played on Mon May 16 11:52:43 2022
+
+Game Number: 2
+
+
+		TIE! has won this game!
+The Score is: -50
+The number of games won is: 1
+The number of games lost is: 18446744073709551615
+The number of games played is: 2
+The number of games tied is: 1
+
+This was a Tie between Player and Computer!!
+
+		TIE!!
 
