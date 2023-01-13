@@ -1,6 +1,0 @@
-
-Book Title : 
-Book Author : 
-Book Publisher : Pearson
-Book In Stock : -1
-Book Sales : 1
